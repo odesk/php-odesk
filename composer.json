@@ -1,0 +1,36 @@
+{
+    "name": "odesk/api-lib",
+    "description": "oDesk API",
+    "version": "0.1.0",
+    "type": "library",
+    "keywords": ["odesk", "php", "api"],
+    "homepage": "http://www.odesk.com",
+    "time": "2014-04-21",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Maksym Novozhylov",
+            "email": "mnovozhilov@odesk.com",
+            "homepage": "http://mnov.tel",
+            "role": "Software Engineer, Platform/Integrity"
+        }
+    ],
+    "support": {
+        "email": "apisupport@odesk.com",
+        "issues": "https://github.com/.../issues",
+        "forum": "https://www.odesk.com/community/forum/49",
+        "source": "https://github.com/..."
+    },
+    "require": {
+	"php": ">=5.3.3",
+	"ext-oauth": "*"
+    },
+    "autoload": {
+        "psr-0": {
+            "oDesk\\API": "src/"
+        },
+	    "files": [
+	        "src/oDesk/API/constants.php"
+	    ]
+    }
+}
