@@ -23,7 +23,7 @@ use oDesk\API\Client as ApiClient;
  */
 final class Auth extends ApiClient
 {
-    const ENTRY_POINT = 'api';
+    const ENTRY_POINT = ODESK_API_EP_NAME;
 
     /**
      * @var Client instance
@@ -37,7 +37,7 @@ final class Auth extends ApiClient
      */
     public function __construct(ApiClient $client)
     {
-        ApiDebug::p('init auth router');
+        ApiDebug::p('init ' . __CLASS__ . ' router');
         $this->_client = $client;
         parent::$_epoint = self::ENTRY_POINT;
     }
@@ -49,7 +49,7 @@ final class Auth extends ApiClient
      */
     public function getUserInfo()
     {
-        ApiDebug::p('getUserInfo');
+        ApiDebug::p(__FUNCTION__);
 
         $info = $this->_client->get('/auth/v1/info');
         ApiDebug::p('found auth info', $info);

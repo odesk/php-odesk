@@ -22,7 +22,7 @@ use oDesk\API\Client as ApiClient;
  */
 final class Mc extends ApiClient
 {
-    const ENTRY_POINT = 'api';
+    const ENTRY_POINT = ODESK_API_EP_NAME;
 
     /**
      * @var Client instance
@@ -36,7 +36,7 @@ final class Mc extends ApiClient
      */
     public function __construct(ApiClient $client)
     {
-        ApiDebug::p('init mc router');
+        ApiDebug::p('init ' . __CLASS__ . ' router');
         $this->_client = $client;
         parent::$_epoint = self::ENTRY_POINT;
     }
@@ -49,10 +49,65 @@ final class Mc extends ApiClient
      */
     public function getTrays()
     {
-        ApiDebug::p('getTrays');
+        ApiDebug::p(__FUNCTION__);
 
         $response = $this->_client->get('/mc/v1/trays');
         ApiDebug::p('found trays', $response);
+
+        return $response;
+    }
+
+    /**
+     * Get tray by type
+     *
+     * @param   string $username Username
+     * @param   string $type Tray type/name
+     * @access  public
+     * @return  object
+     */
+    public function getTrayByType($username, $type)
+    {
+        ApiDebug::p(__FUNCTION__);
+
+        $response = $this->_client->get('/mc/v1/trays/' . $username . '/' . $type);
+        ApiDebug::p('found tray', $response);
+
+        return $response;
+    }
+
+    /**
+     * List thread details based on thread id
+     *
+     * @param   string $username Username
+     * @param   integer $threadId Thread ID
+     * @access  public
+     * @return  object
+     */
+    public function getThreadDetails($username, $threadId)
+    {
+        ApiDebug::p(__FUNCTION__);
+
+        $response = $this->_client->get('/mc/v1/threads/' . $username . '/' . $threadId);
+        ApiDebug::p('found thread', $response);
+
+        return $response;
+    }
+
+    /**
+     * Update threads based on user actions
+     *
+     * @param   string $username Username
+     * @param   integer $threadId Thread ID
+     * @param   array $params Parameters
+     * @access  public
+     * @return  object
+     */
+    public function markThread($username, $threadId, $params)
+    {
+        ApiDebug::p(__FUNCTION__);
+
+        $response = $this->_client->put('/mc/v1/threads/' . $username . '/' . $threadId, $params);
+        ApiDebug::p('found response', $response);
 
         return $response;
     }
@@ -67,7 +122,7 @@ final class Mc extends ApiClient
      */
     public function startNewThread($username, $params)
     {
-        ApiDebug::p('startNewThread');
+        ApiDebug::p(__FUNCTION__);
 
         $response = $this->_client->post('/mc/v1/threads/' . $username, $params);
         ApiDebug::p('found response', $response);
@@ -86,7 +141,7 @@ final class Mc extends ApiClient
      */
     public function replyToThread($username, $threadId, $params)
     {
-        ApiDebug::p('replyToThread');
+        ApiDebug::p(__FUNCTION__);
 
         $response = $this->_client->post('/mc/v1/threads/' . $username . '/' . $threadId, $params);
         ApiDebug::p('found response', $response);

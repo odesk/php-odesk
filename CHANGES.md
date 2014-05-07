@@ -1,5 +1,11 @@
 # Release History
 
+## 0.1.2
+* Added support of all MC API
+* Added Custom Payments API
+* Added Financial Reporting
+* Added Time Reports
+
 ## 0.1.1
 * LICENSE file added
 * Fixes in README

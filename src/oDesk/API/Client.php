@@ -28,7 +28,7 @@ class Client
     /**
      * @var Entry point name
      */
-    static protected $_epoint = 'api';
+    static protected $_epoint = ODESK_API_EP_NAME;
 
     /**
      * @var Server instance (AuthTypes)
@@ -125,7 +125,11 @@ class Client
                 break;
         }
 
-        $url = $url . '.' . self::DATA_FORMAT;
+        if (self::$_epoint == ODESK_API_EP_NAME) {
+            $url = $url . '.' . self::DATA_FORMAT;
+        } else if (self::$_epoint == ODESK_GDS_EP_NAME) {
+            $params['tqx'] = 'out:' . self::DATA_FORMAT;
+        }
 
         $this->_server->option('sigMethod', ApiConfig::get('sigMethod'));
         $this->_server->option('epoint', self::$_epoint);
