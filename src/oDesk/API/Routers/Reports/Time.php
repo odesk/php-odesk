@@ -46,9 +46,9 @@ final class Time extends ApiClient
      * Generate Time Reports for a Specific Team/Comapny/Agency
      *
      * @param   string $company Company ID
-     * @param   string $team Team ID
-     * @param   string $agency Agency ID
-     * @param   array $params Parameters
+     * @param   string (Optional) $team Team ID
+     * @param   string (Optional) $agency Agency ID
+     * @param   array (Optional) $params Parameters
      * @param   boolean $hideFinDetails (Optional) Hides all financial details
      * @return  object
      */

@@ -127,7 +127,7 @@ class Client
 
         if (self::$_epoint == ODESK_API_EP_NAME) {
             $url = $url . '.' . self::DATA_FORMAT;
-        } else if (self::$_epoint == ODESK_GDS_EP_NAME) {
+        } elseif (self::$_epoint == ODESK_GDS_EP_NAME) {
             $params['tqx'] = 'out:' . self::DATA_FORMAT;
         }
 

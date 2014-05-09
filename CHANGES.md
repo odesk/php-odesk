@@ -1,5 +1,8 @@
 # Release History
 
+## 0.1.3
+* Added all Hiring API
+
 ## 0.1.2
 * Added support of all MC API
 * Added Custom Payments API
