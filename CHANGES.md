@@ -1,5 +1,11 @@
 # Release History
 
+## 0.1.4
+* Added Search Jobs and Providers API
+* Added get Provider Profile and get Job Profile API
+* Added Metadata API
+* Added Organization API
+
 ## 0.1.3
 * Added all Hiring API
 
