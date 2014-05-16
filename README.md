@@ -6,7 +6,14 @@ This project provides a set of oDesk API from http://developers.odesk.com
 The following features are supported:
 
 * My Info API
+* Custom Payments API
+* Hiring API
+* Job and Freelancer Profile API
+* Search Jobs and Freelancesr API
+* Organization API
 * MC API
+* Time and Financial Reporting
+* Metadata API
 
 # Licence
 
