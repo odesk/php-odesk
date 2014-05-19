@@ -14,6 +14,9 @@ The following features are supported:
 * MC API
 * Time and Financial Reporting
 * Metadata API
+* Snapshot API
+* Team API
+* Workdiary API
 
 # Licence
 

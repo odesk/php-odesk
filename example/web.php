@@ -25,7 +25,7 @@ $config = new \oDesk\API\Config(
         'mode'              => 'web',                           // can be 'nonweb' for console apps (default),
                                                                 // and 'web' for web-based apps
 //	'debug' => true, // allows to enable debug mode, note that enabled debug in web-based application can block redirects
-//	'auth_type' => 'MyOAuth' // your own authentication type, see AuthTypes directory
+//	'authType' => 'MyOAuth' // your own authentication type, see AuthTypes directory
     )
 );
 

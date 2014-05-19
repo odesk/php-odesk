@@ -1,7 +1,7 @@
 {
     "name": "odesk/api-lib",
     "description": "oDesk API",
-    "version": "0.1.0",
+    "version": "0.1.5",
     "type": "library",
     "keywords": ["odesk", "php", "api"],
     "homepage": "http://www.odesk.com",
