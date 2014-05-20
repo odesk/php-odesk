@@ -29,7 +29,7 @@ $config = new \oDesk\API\Config(
         'accessSecret'      => $_SESSION['access_secret'],      // got access secret
         'verifySsl'         => false,                           // whether to verify SSL
         'debug'             => true,                            // allows to enable debug mode
-	    'authType'          => 'OAuthPHPLib' // your own authentication type, see AuthTypes directory
+        'authType'          => 'OAuthPHPLib' // your own authentication type, see AuthTypes directory
     )
 );
 
