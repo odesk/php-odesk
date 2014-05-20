@@ -1,5 +1,10 @@
 # Release History
 
+##
+* Fixed Workdiary API
+* Fixed Teams API
+* Added an example, based on php-oauth client library
+
 ## 0.1.5
 * Added Snapshot API
 * Added Team API

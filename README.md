@@ -43,7 +43,13 @@ Usage of API is reglamented by Terms of Use
 If you want to integrate this library you need to have
 
 * PHP >= 5.3.0
-* OAuth Extension installed
+* OAuth Extension installed (optional, we recommend using official pecl
+  extension, but in case you want to use own library, you need to drop
+  line 'ext-oauth' from composer json, or do not use composer, which is
+  also optional. In that case you need to setup 'authType' parameter
+  in your configuration options. The source contains a oauth-php library
+  that can be used as alternative. See more in AuthTypes directory if 
+  you want to create an authentication layer for your own client library)
 * Composer installed (optional)
 
 ## Example

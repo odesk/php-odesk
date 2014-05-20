@@ -17,162 +17,13 @@ use oDesk\API\Config as ApiConfig;
 use oDesk\API\Interfaces\Client as ApiClient;
 use oDesk\API\Utils as ApiUtils;
 use oDesk\API\ApiException as ApiException;
+use oDesk\API\AuthTypes\AbstractOAuth as AbstractOAuth;
 
 /**
  * OAuth 1.0a Client
  */
-final class OAuth1 implements ApiClient
+final class OAuth1 extends AbstractOAuth implements ApiClient
 {
-
-    const URL_AUTH      = '/services/api/auth';
-    const URL_ATOKEN    = '/auth/v1/oauth/token/access';
-    const URL_RTOKEN    = '/auth/v1/oauth/token/request';
-
-    /**
-     * @var Consumer key
-     */
-    static private $_apiKey = null;
-    /**
-     * @var Consumer secret
-     */
-    static private $_secret = null;
-    /**
-     * @var oauth_token, shared request token (temporary)
-     */
-    static private $_requestToken = null;
-    /**
-     * @var oauth_token_secret (temporary)
-     */
-    static private $_requestSecret = null;
-    /**
-     * @var Final access token
-     */
-    static private $_accessToken = null;
-    /**
-     * @var Final access token secret
-     */
-    static private $_accessSecret = null;
-    /**
-     * @var OAuth verifier
-     */
-    static private $_verifier = null;
-    /**
-     * @var Entry point name
-     */
-    static private $_epoint = 'api';
-    /**
-     * @var Application mode
-     */
-    static private $_mode = 'web';
-    /**
-     * @var SSL verification flag
-     */
-    static private $_verifySsl = true;
-    /**
-     * @var Signature method
-     */
-    static private $_sigMethod = 'HMAC-SHA1';
-
-    /**
-     * Constructor 
-     * 
-     * @param   string $key Application key
-     * @param	string $secret Secret key
-     * @access  public
-     * @throws  ApiException Wrong key or secret
-     */
-    public function __construct($key, $secret)
-    {
-        ApiDebug::p('starting ' . __CLASS__ . ' authentication');
-
-        if (!$secret) {
-            throw new ApiException('You must define "secret key".');
-        } else {
-            self::$_secret = (string) $secret;
-        }
-
-        if (!$key) {
-            throw new ApiException('You must define "application key".');
-        } else {
-            self::$_apiKey = (string) $key;
-        }
-    }
-
-    /**
-     * Set option
-     *
-     * @param   string $option Option name
-     * @param   mixed $value Option value
-     * @access  public
-     * @return  boolean
-     */
-    public static function option($option, $value)
-    {
-        $name = '_' . $option;
-
-        $r = new \ReflectionClass('\\' . __CLASS__);
-        try {
-            $r->getProperty($name);
-            self::$$name = $value;
-            return true;
-        } catch (\ReflectionException $e) {
-            return false;
-        }
-    }
-
-    /**
-     * Auth process 
-     * 
-     * @access  public
-     * @return  string
-     */
-    public function auth()
-    {
-        ApiDebug::p('running auth process in ' . __CLASS__);
-
-        if (self::$_accessToken === null && self::$_verifier === null) {
-            if (self::$_requestToken === null && self::$_requestSecret === null) {
-                // web-based application should setup and save request token itself
-                // to be able use it after callback
-                $this->setupRequestToken();
-            }
-
-            $authUrl = ApiUtils::getFullUrl(self::URL_AUTH) .
-            '?oauth_token=' . self::$_requestToken;
-
-            if (self::$_mode === 'web') {
-                // authorize web application via browser
-                header('Location: ' . $authUrl);
-            } elseif (self::$_mode === 'nonweb') {
-                // authorize nonweb application
-                ApiDebug::p('found [nonweb] mode, need to autorize application manually');
-
-                $prompt = 'Visit ' . $authUrl . "\n" .
-                    'and provide oauth_verifier for further authorization' . "\n" .
-                    '$ ';
-                if (PHP_OS == 'WINNT') {
-                    echo $prompt;
-                    $verifier = stream_get_line(STDIN, 1024, PHP_EOL);
-                } else {
-                    $verifier = readline($prompt);
-                }
-
-                // get access token
-                $this->_setupAccessToken($verifier);
-            }
-        } elseif (self::$_accessToken == null && self::$_verifier !== null) {
-            // get access token, web-based callback
-            $this->_setupAccessToken(self::$_verifier);
-        } else {
-            // access_token isset
-        }
-
-        return array(
-            'access_token'  => self::$_accessToken,
-            'access_secret' => self::$_accessSecret
-        );
-    }
-
     /**
      * Do request 
      * 
@@ -231,10 +82,10 @@ final class OAuth1 implements ApiClient
      * Get access token
      *
      * @param	string $verifier OAuth verifier, got after authorization
-     * @access	private
+     * @access	protected
      * @return	array
      */
-    private function _setupAccessToken($verifier)
+    protected function _setupAccessToken($verifier)
     {
         ApiDebug::p('requesting access token');
 
@@ -258,10 +109,10 @@ final class OAuth1 implements ApiClient
      * Get OAuth instance
      *
      * @param   integer $authType Auth type
-     * @access  public
+     * @access  protected
      * @return  object
      */
-    private function _getOAuthInstance($authType)
+    protected function _getOAuthInstance($authType)
     {
         ApiDebug::p('get OAuth instance');
 

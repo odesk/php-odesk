@@ -49,11 +49,24 @@ class Client
         $secret     = $config::get('consumerSecret');
         $aToken     = $config::get('accessToken');
         $aSecret    = $config::get('accessSecret');
+        $verifySsl  = $config::get('verifySsl');
         $auth       = 'oDesk\API\AuthTypes\\' . $config::get('authType');
 
         $this->_server = new $auth($key, $secret);
         !$aToken  || $this->_server->option('accessToken', $aToken);
         !$aSecret || $this->_server->option('accessSecret', $aSecret);
+        $this->_server->option('verifySsl', $verifySsl);
+    }
+
+    /**
+     * Get server instance
+     *
+     * @return  object
+     * @access  public
+     */
+    public function getServer()
+    {
+        return $this->_server;
     }
 
     /**

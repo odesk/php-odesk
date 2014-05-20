@@ -58,6 +58,10 @@ final class Config
      */
     static private $_sigMethod = 'HMAC-SHA1';
     /**
+     * @var SSL verification
+     */
+    static private $_verifySsl = true;
+    /**
      * @var Debug mode
      */
     static private $_debug = false;

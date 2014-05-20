@@ -48,10 +48,10 @@ final class Workdiary extends ApiClient
      * @param   string $company Company ID
      * @param   string $username User ID
      * @param   string $date Date
-     * @param   string $params Parameters
+     * @param   string $params (Optional) Parameters
      * @return  object
      */
-    public function get($key)
+    public function get($company, $username, $date, $params = array())
     {
         ApiDebug::p(__FUNCTION__);
 

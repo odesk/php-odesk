@@ -61,10 +61,10 @@ final class Teams extends ApiClient
      * Get specific team or company
      *
      * @param   string $team Teamroom or company ID
-     * @param   array $params Parameters
+     * @param   array $params (Optional) Parameters
      * @return  object
      */
-    public function getSpecific($team)
+    public function getSpecific($team, $params = array())
     {
         ApiDebug::p(__FUNCTION__);
 
