@@ -27,7 +27,7 @@ $config = new \oDesk\API\Config(
         'consumerSecret'    => 'xxxxxxxxxxxx',                // SETUP KEY SECRET
         'accessToken'       => $_SESSION['access_token'],       // got access token
         'accessSecret'      => $_SESSION['access_secret'],      // got access secret
-        'verifySsl'         => false,                           // whether to verify SSL
+//        'verifySsl'         => false,                           // whether to verify SSL
         'debug'             => true,                            // allows to enable debug mode
         'authType'          => 'OAuthPHPLib' // your own authentication type, see AuthTypes directory
     )
