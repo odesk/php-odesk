@@ -17,6 +17,7 @@ The following features are supported:
 * Snapshot API
 * Team API
 * Workdiary API
+* oTasks API
 
 # Licence
 

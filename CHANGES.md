@@ -1,6 +1,9 @@
 # Release History
 
-##
+## 0.1.7
+* Added oTasks API
+
+## 0.1.6
 * Fixed Workdiary API
 * Fixed Teams API
 * Added an example, based on php-oauth client library
