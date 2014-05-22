@@ -57,6 +57,9 @@ If you want to integrate this library you need to have
 In addition to this, a full example is available in the `example` directory. 
 This includes `console.php` that gets an access token and requests the data
 for non-webbased applications, and `web.php` for webbased applications.
+There is also `console-own-auth-lib.php` available to present usage of
+own php client together with this oDesk library.
+
 Next to this a `composer.json` is included for use with Composer.
 
 ## Composer
