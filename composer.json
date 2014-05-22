@@ -1,12 +1,12 @@
 {
     "name": "odesk/php-odesk",
-    "description": "oDesk API - PHP Library",
+    "description": "PHP Library for Public oDesk API",
     "version": "0.1.7",
     "type": "library",
     "keywords": ["odesk", "php", "api"],
     "homepage": "http://www.odesk.com",
     "time": "2014-04-21",
-    "license": "Apache License, Version 2.0",
+    "license": "Apache-2.0",
     "authors": [
         {
             "name": "Maksym Novozhylov",
@@ -19,11 +19,14 @@
         "email": "apisupport@odesk.com",
         "issues": "https://github.com/odesk/php-odesk/issues",
         "forum": "https://www.odesk.com/community/forum/49",
-        "source": "https://github.com/odesk/php-odesk/releases"
+        "source": "https://github.com/odesk/php-odesk/releases",
+        "wiki": "http://developers.odesk.com"
+    },
+    "suggest": {
+        "ext-oauth": "This extension from PECL provides OAuth consumer and provider bindings. See more under http://www.php.net/oauth"
     },
     "require": {
-	    "php": ">=5.3.3",
-	    "ext-oauth": "*"
+	    "php": ">=5.3.3"
     },
     "autoload": {
         "psr-0": {
