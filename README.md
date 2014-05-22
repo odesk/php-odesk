@@ -74,3 +74,83 @@ Below is a simple example `composer.json` file you could use:
             "odesk/php-odesk": "dev-master"
         }
     }
+
+## Installation - using Composer
+1.
+{
+    "name": "my/my-oauth-app",
+    "require": {
+        "odesk/php-odesk": "v0.1.7" // note: the latest release is recommended
+    }
+}
+
+2.
+run the following command `/usr/local/bin/composer.phar update`
+
+the output should look similar to
+```
+Loading composer repositories with package information
+Updating dependencies (including require-dev)
+  - Installing odesk/php-odesk (v0.1.7)
+    Downloading: 100%         
+
+Writing lock file
+Generating autoload files
+```
+
+3.
+IMPORTANT:
+The library supports different OAuth client, by default it requires PECL PHP extension,
+see more at http://www.php.net/oauth. Make sure it is installed. In case you don't
+want to use it, or have no possibility to install it, you may want to use preloaded
+php library, called oauth-php (read more in vendor-src/README)
+
+copy `vendor/odesk/php-odesk/example/console.php` to the `myapp.php` if you have
+ext-oauth installed
+
+or
+
+copy `vendor/odesk/php-odesk/example/console-own-auth-lib.php` to `myapp.php` if
+you want to use preloaded php library as OAuth client
+
+otherwise
+
+ - check `vendor/odesk/php-odesk/src/oDesk/API/AuthTypes/` and create your own wrapper
+for OAuth
+ - copy `vendor/odesk/php-odesk/example/console-own-auth-lib.php` to `myapp.php`
+ - after that update 'authType' property in the configuration section of
+`myapp.php` and specify the name of your handler
+
+*NOTE: use `web.php` example if you are creating a web-based application.*
+
+4.
+open `myapp.php` and type consumerKey and consumerSecret that you previously have 
+got from API Center
+
+***That's all. Run your app as `php myapp.php` and have fun.***
+
+## Installation by downloading sources
+1.
+Download latest release from https://github.com/odesk/php-odesk/releases, 
+let's say it is https://github.com/odesk/php-odesk/archive/v0.1.7.tar.gz, and
+extract it to `vendor/odesk` folder, located in the root of your application
+
+2.
+Create vendor/autoload.php, possible simple variant could be:
+```
+require_once __DIR__ . '/odesk/php-odesk-0.1.7/src/oDesk/API/constants.php';
+
+spl_autoload_register('oDeskVendorAutoloader');
+
+function oDeskVendorAutoloader($_class)
+{
+    $path = __DIR__ . '/odesk/php-odesk-0.1.7/src/' . str_replace('\\', '/', $_class) . '.php';
+    include_once $path;
+}
+```
+
+3.
+open `myapp.php` and type consumerKey and consumerSecret that you previously have 
+got from API Center
+
+***That's all. Run your app as `php myapp.php` and have fun.***

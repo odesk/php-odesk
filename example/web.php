@@ -11,7 +11,7 @@
  */
 session_start();
 
-require __DIR__ . '/../vendor/autoload.php';
+require __DIR__ . '/vendor/autoload.php';
 
 $config = new \oDesk\API\Config(
     array(

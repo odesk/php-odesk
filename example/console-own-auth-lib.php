@@ -14,7 +14,7 @@
 // Our php-oauth library - which we use as example - requires a session
 session_start();
 
-require __DIR__ . '/../vendor/autoload.php';
+require __DIR__ . '/vendor/autoload.php';
 
 // if token are known, they can be read from session
 // or other secure storage
