@@ -77,12 +77,15 @@ Below is a simple example `composer.json` file you could use:
 
 ## Installation - using Composer
 1.
+Add `odesk/php-odesk` to your `composer.json`, simple example:
+```
 {
     "name": "my/my-oauth-app",
     "require": {
         "odesk/php-odesk": "v0.1.7" // note: the latest release is recommended
     }
 }
+```
 
 2.
 run the following command `/usr/local/bin/composer.phar update`
