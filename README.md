@@ -1,25 +1,25 @@
 # Introduction
-This project provides a set of oDesk API from http://developers.odesk.com
+This project provides a set of resources of oDesk API from http://developers.odesk.com
  based on OAuth 1.0a.
 
 # Features
-The following features are supported:
+These are the supported API resources:
 
-* My Info API
-* Custom Payments API
-* Hiring API
-* Job and Freelancer Profile API
-* Search Jobs and Freelancesr API
-* Organization API
-* MC API
+* My Info
+* Custom Payments
+* Hiring
+* Job and Freelancer Profile
+* Search Jobs and Freelancers
+* Organization
+* MC
 * Time and Financial Reporting
-* Metadata API
-* Snapshot API
-* Team API
-* Workdiary API
-* oTasks API
+* Metadata
+* Snapshot
+* Team
+* Workd Diary
+* oTasks
 
-# Licence
+# License
 
 Copyright 2014 oDesk Corporation. All Rights Reserved.
 
@@ -36,37 +36,36 @@ See the License for the specific language governing permissions and
 limitations under the License.
 
 ## SLA
-Usage of API is reglamented by Terms of Use
+The usage of this API is ruled by the Terms of Use at:
 
     http://developers.odesk.com/API-Terms-of-Use
 
 # Application Integration
-If you want to integrate this library you need to have
+To integrate this library you need to have:
 
 * PHP >= 5.3.0
-* OAuth Extension installed (optional, we recommend using official pecl
-  extension, but in case you want to use own library, you need to drop
+* OAuth Extension installed (optional), we recommend using official pecl
+  extension, but in case you want to use your own library, you need to drop
   line 'ext-oauth' from composer json, or do not use composer, which is
-  also optional. In that case you need to setup 'authType' parameter
-  in your configuration options. The source contains a oauth-php library
-  that can be used as alternative. See more in AuthTypes directory if 
-  you want to create an authentication layer for your own client library)
+  also optional. In that case, you need to setup the 'authType' parameter
+  in your configuration options. The source contains an oauth-php library
+  that can be used as alternative. See more in the AuthTypes directory if 
+  you want to create an authentication layer for your own client library.
 * Composer installed (optional)
 
 ## Example
 In addition to this, a full example is available in the `example` directory. 
 This includes `console.php` that gets an access token and requests the data
-for non-webbased applications, and `web.php` for webbased applications.
-There is also `console-own-auth-lib.php` available to present usage of
-own php client together with this oDesk library.
+for applications that are not web-based, and `web.php` for web-based applications.
+There is also `console-own-auth-lib.php` available to use your own php client together with this oDesk library.
 
-Next to this a `composer.json` is included for use with Composer.
+Next to this a `composer.json` is included to use with Composer.
 
 ## Composer
-In order to easily integrate with your application it is recommended to use
+In order to easily integrate with your application we recommend using
 [Composer](https://getcomposer.org) to install the dependencies.
 
-Below is a simple example `composer.json` file you could use:
+Below is a simple example `composer.json` file you can use:
 
     {
         "name": "odesk/my-oauth-app",
@@ -103,10 +102,9 @@ Generating autoload files
 
 3.
 IMPORTANT:
-The library supports different OAuth client, by default it requires PECL PHP extension,
-see more at http://www.php.net/oauth. Make sure it is installed. In case you don't
-want to use it, or have no possibility to install it, you may want to use preloaded
-php library, called oauth-php (read more in vendor-src/README)
+The library supports different OAuth clients, by default it requires PECL PHP extension (see more at http://www.php.net/oauth). Make sure it is installed. In case you don't
+want to use it, or have no possibility to install it, you may want to use a preloaded
+php library, called oauth-php (read more in vendor-src/README).
 
 copy `vendor/odesk/php-odesk/example/console.php` to the `myapp.php` if you have
 ext-oauth installed
@@ -122,24 +120,22 @@ otherwise
 for OAuth
  - copy `vendor/odesk/php-odesk/example/console-own-auth-lib.php` to `myapp.php`
  - after that update 'authType' property in the configuration section of
-`myapp.php` and specify the name of your handler
+`myapp.php` and specify the name of your handler.
 
 *NOTE: use `web.php` example if you are creating a web-based application.*
 
 4.
-open `myapp.php` and type consumerKey and consumerSecret that you previously have 
-got from API Center
-
+open `myapp.php` and type the consumerKey and consumerSecret that you previously got from the API Center.
 ***That's all. Run your app as `php myapp.php` and have fun.***
 
 ## Installation by downloading sources
 1.
 Download latest release from https://github.com/odesk/php-odesk/releases, 
 let's say it is https://github.com/odesk/php-odesk/archive/v0.1.7.tar.gz, and
-extract it to `vendor/odesk` folder, located in the root of your application
+extract it to `vendor/odesk` folder, located in the root of your application.
 
 2.
-Create vendor/autoload.php, possible simple variant could be:
+Create vendor/autoload.php, a possible simple variant could be:
 ```
 require_once __DIR__ . '/odesk/php-odesk-0.1.7/src/oDesk/API/constants.php';
 
@@ -153,7 +149,6 @@ function oDeskVendorAutoloader($_class)
 ```
 
 3.
-open `myapp.php` and type consumerKey and consumerSecret that you previously have 
-got from API Center
+open `myapp.php` and type the consumerKey and consumerSecret that you previously got from the API Center.
 
 ***That's all. Run your app as `php myapp.php` and have fun.***
