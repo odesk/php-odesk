@@ -74,7 +74,7 @@ Below is a simple example `composer.json` file you can use:
         }
     }
 
-## Installation - using Composer
+## Installation using Composer
 1.
 Add `odesk/php-odesk` to your `composer.json`, simple example:
 ```
