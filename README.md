@@ -1,3 +1,10 @@
+PHP bindings for oDesk API
+============
+
+[![Package version](http://img.shields.io/packagist/v/odesk/php-odesk.svg)](https://packagist.org/packages/odesk/php-odesk)
+[![Build status](http://img.shields.io/travis/odesk/php-odesk/dev.svg)](http://travis-ci.org/odesk/php-odesk)
+[![Monthly downloads](http://img.shields.io/packagist/dm/odesk/php-odesk.svg)](https://packagist.org/packages/odesk/php-odesk)
+
 # Introduction
 This project provides a set of resources of oDesk API from http://developers.odesk.com
  based on OAuth 1.0a.
