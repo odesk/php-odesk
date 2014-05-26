@@ -12,6 +12,8 @@
 
 namespace oDesk\API;
 
+use oDesk\API\ApiException as ApiException;
+
 /**
  * Config factory
  */
