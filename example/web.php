@@ -1,6 +1,6 @@
 <?php
 /**
- * oDesk auth library for using with public API by OAuth
+ * Authentication library for oDesk API using OAuth
  *
  * @final
  * @package     oDeskAPI
@@ -24,7 +24,7 @@ $config = new \oDesk\API\Config(
         'verifier'          => $_GET['oauth_verifier'],         // got oauth verifier after authorization
         'mode'              => 'web',                           // can be 'nonweb' for console apps (default),
                                                                 // and 'web' for web-based apps
-//	'debug' => true, // allows to enable debug mode, note that enabled debug in web-based application can block redirects
+//	'debug' => true, // allows enabling debug mode. Note that enabling debug in web-based applications can block redirects
 //	'authType' => 'MyOAuth' // your own authentication type, see AuthTypes directory
     )
 );
@@ -32,13 +32,13 @@ $config = new \oDesk\API\Config(
 $client = new \oDesk\API\Client($config);
 
 if (empty($_SESSION['request_token']) && empty($_SESSION['access_token'])) {
-    // we need to get and save request token, those will be used again
-    // after redirect from oDesk site
+    // we need to get and save the request token. It will be used again
+    // after the redirect from the oDesk site
     $requestTokenInfo = $client->getRequestToken();
 
     $_SESSION['request_token']  = $requestTokenInfo['oauth_token'];
     $_SESSION['request_secret'] = $requestTokenInfo['oauth_token_secret'];
-    // request autorization
+    // request authorization
     $client->auth();
 } elseif (empty($_SESSION['access_token'])) {
     // callback request should be pointed to this script as well
@@ -50,7 +50,7 @@ if (empty($_SESSION['request_token']) && empty($_SESSION['access_token'])) {
 }
 // $accessTokenInfo has the following structure
 // array('access_token' => ..., 'access_secret' => ...);
-// keep access token in secure place
+// keeps the access token in a secure place
 
 // if authenticated
 if ($_SESSION['access_token']) {
@@ -58,20 +58,20 @@ if ($_SESSION['access_token']) {
     unset($_SESSION['request_token']);
     unset($_SESSION['request_secret']);
 
-    // get list of trays for authed user
+    // gets a list of trays for the authenticated user
     $mc = new \oDesk\API\Routers\Mc($client);
     $trays = $mc->getTrays();
 
     print_r($trays);
 
-    // get info of authed user
+    // gets info of the authenticated user
     $auth = new \oDesk\API\Routers\Auth($client);
     $info = $auth->getUserInfo();
 
     print_r($info);
 
-    // try to start a new message thread with wrong parameters
-    // to test error response from server (subject is missing)
+    // attempts to start a new message thread with wrong parameters
+    // to test an error response from the server (the subject is missing)
     $params = array(
         'recipients' => 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
         'body' => 'this is a test message from oDesk Library'
