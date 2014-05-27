@@ -1,7 +1,7 @@
 <?php
 /**
- * oDesk auth library for using with public API by OAuth
- * Example of usage own authentication OAuth client
+ * Authentication library for oDesk API using OAuth
+ * Example of using your own authentication OAuth client
  *
  * @final
  * @package     oDeskAPI
@@ -11,12 +11,12 @@
  * @license     oDesk's API Terms of Use {@link http://developers.odesk.com/API-Terms-of-Use}
  */
 
-// Our php-oauth library - which we use as example - requires a session
+// Our php-oauth library - used in this example - requires a session
 session_start();
 
 require __DIR__ . '/vendor/autoload.php';
 
-// if token are known, they can be read from session
+// if you already have the tokens, they can be read from session
 // or other secure storage
 //$_SESSION['access_token'] = 'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
 //$_SESSION['access_secret']= 'xxxxxxxxxxxx';
@@ -35,7 +35,7 @@ $config = new \oDesk\API\Config(
 
 $client = new \oDesk\API\Client($config);
 
-// our example AuthType allows to assign already known token data
+// our example AuthType allows assigning already known token data
 if (!empty($_SESSION['access_token']) && !empty($_SESSION['access_secret'])) {
     $client->getServer()
         ->getInstance()
@@ -49,8 +49,8 @@ if (!empty($_SESSION['access_token']) && !empty($_SESSION['access_secret'])) {
 } else {
     // $accessTokenInfo has the following structure
     // array('access_token' => ..., 'access_secret' => ...);
-    // keep access token in secure place
-    // get info of authed user
+    // keeps access token in a secure place
+    // gets info of authenticated user
     $accessTokenInfo = $client->auth();
 }
 
