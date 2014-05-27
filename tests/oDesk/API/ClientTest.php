@@ -1,11 +1,13 @@
 <?php
+namespace oDesk\API\Tests;
+
 require __DIR__ . '/../../../vendor/autoload.php';
 
 use oDesk\API\Debug as ApiDebug;
 use oDesk\API\Config as ApiConfig;
 use oDesk\API\Client as Client;
 
-class ClientTest extends PHPUnit_Framework_TestCase
+class ClientTest extends \PHPUnit_Framework_TestCase
 {
     /**
      * @test
@@ -35,11 +37,11 @@ class ClientTest extends PHPUnit_Framework_TestCase
                 'consumerSecret'    => 'secret'
             )
         );
-        $reflection = new ReflectionClass('oDesk\API\Client');
+        $reflection = new \ReflectionClass('oDesk\API\Client');
         $property = $reflection->getProperty('_server');
         $property->setAccessible(true);
         $helper = new Client($config);
-        $property->setValue($helper, new StdClass);
+        $property->setValue($helper, new \StdClass);
         $server = $helper->getServer();
 
         $this->assertAttributeInstanceOf('StdClass', '_server', $helper);
@@ -57,7 +59,7 @@ class ClientTest extends PHPUnit_Framework_TestCase
                 'consumerSecret'    => 'secret'
             )
         );
-        $reflection = new ReflectionClass('oDesk\API\Client');
+        $reflection = new \ReflectionClass('oDesk\API\Client');
         $property = $reflection->getProperty('_server');
         $property->setAccessible(true);
         $helper = new Client($config);
@@ -83,7 +85,7 @@ class ClientTest extends PHPUnit_Framework_TestCase
                 'consumerSecret'    => 'secret'
             )
         );
-        $reflection = new ReflectionClass('oDesk\API\Client');
+        $reflection = new \ReflectionClass('oDesk\API\Client');
         $property = $reflection->getProperty('_server');
         $property->setAccessible(true);
         $helper = new Client($config);
@@ -112,7 +114,7 @@ class ClientTest extends PHPUnit_Framework_TestCase
                 'consumerSecret'    => 'secret'
             )
         );
-        $reflection = new ReflectionClass('oDesk\API\Client');
+        $reflection = new \ReflectionClass('oDesk\API\Client');
         $property = $reflection->getProperty('_server');
         $property->setAccessible(true);
         $method = $reflection->getMethod('_request');

@@ -1,10 +1,12 @@
 <?php
+namespace oDesk\API\Tests;
+
 require __DIR__ . '/../../../vendor/autoload.php';
 
 use oDesk\API\Config as Config;
 use oDesk\API\ApiException as ApiException;
 
-class ConfigTest extends PHPUnit_Framework_TestCase
+class ConfigTest extends \PHPUnit_Framework_TestCase
 {
     /**
      * @expectedException oDesk\API\ApiException
@@ -19,7 +21,7 @@ class ConfigTest extends PHPUnit_Framework_TestCase
      */
     public function testDefaultProperty()
     {
-        $reflection = new ReflectionClass('oDesk\API\Config');
+        $reflection = new \ReflectionClass('oDesk\API\Config');
         $property = $reflection->getProperty('_verifySsl');
         $property->setAccessible(true);
         $helper = new Config(array());
@@ -33,7 +35,7 @@ class ConfigTest extends PHPUnit_Framework_TestCase
      */
     public function testSetProperty()
     {
-        $reflection = new ReflectionClass('oDesk\API\Config');
+        $reflection = new \ReflectionClass('oDesk\API\Config');
         $property = $reflection->getProperty('_verifySsl');
         $property->setAccessible(true);
         $helper = new Config(array());

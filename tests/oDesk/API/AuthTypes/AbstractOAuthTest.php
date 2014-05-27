@@ -1,9 +1,11 @@
 <?php
+namespace oDesk\API\Tests\AuthTypes;
+
 require __DIR__ . '/../../../../vendor/autoload.php';
 
 use oDesk\API\AuthTypes\AbstractOAuth as AbstractOAuth;
 
-class AbstractOAuthTest extends PHPUnit_Framework_TestCase
+class AbstractOAuthTest extends \PHPUnit_Framework_TestCase
 {
     /**
      * @test
@@ -15,7 +17,7 @@ class AbstractOAuthTest extends PHPUnit_Framework_TestCase
             array('key', 'secret')
         );
 
-        $reflection = new ReflectionClass($stub);
+        $reflection = new \ReflectionClass($stub);
         $property = $reflection->getProperty('_sigMethod');
         $property->setAccessible(true);
         $before = $property->getValue($property);
@@ -37,7 +39,7 @@ class AbstractOAuthTest extends PHPUnit_Framework_TestCase
             array('key', 'secret')
         );
         
-        $reflection = new ReflectionClass($stub);
+        $reflection = new \ReflectionClass($stub);
         $property = $reflection->getProperty('_verifier');
         $property->setAccessible(true);
         $property->setValue('verifier');
@@ -69,7 +71,7 @@ class AbstractOAuthTest extends PHPUnit_Framework_TestCase
              ->method('_getOAuthInstance')
              ->will($this->returnValue(true));
 
-        $reflection = new ReflectionClass($stub);
+        $reflection = new \ReflectionClass($stub);
         $method = $reflection->getMethod('_getOAuthInstance');
         $method->setAccessible(true);
 
@@ -89,7 +91,7 @@ class AbstractOAuthTest extends PHPUnit_Framework_TestCase
              ->method('_setupAccessToken')
              ->will($this->returnValue(true));
 
-        $reflection = new ReflectionClass($stub);
+        $reflection = new \ReflectionClass($stub);
         $method = $reflection->getMethod('_setupAccessToken');
         $method->setAccessible(true);
 

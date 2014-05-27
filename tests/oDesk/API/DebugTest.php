@@ -1,16 +1,18 @@
 <?php
+namespace oDesk\API\Tests;
+
 require __DIR__ . '/../../../vendor/autoload.php';
 
 use oDesk\API\Debug as ApiDebug;
 
-class DebugTest extends PHPUnit_Framework_TestCase
+class DebugTest extends \PHPUnit_Framework_TestCase
 {
     /**
      * @test
      */
     public function testPrintDebugMessage()
     {
-        $reflection = new ReflectionClass('oDesk\API\Debug');
+        $reflection = new \ReflectionClass('oDesk\API\Debug');
         $property = $reflection->getProperty('_debug');
         $property->setAccessible(true);
         $helper = new ApiDebug();

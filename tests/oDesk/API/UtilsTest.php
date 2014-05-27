@@ -5,7 +5,7 @@ use oDesk\API\Config as Apiconfig;
 use oDesk\API\Debug as ApiDebug;
 use oDesk\API\Utils as Utils;
 
-class UtilsTest extends PHPUnit_Framework_TestCase
+class UtilsTest extends \PHPUnit_Framework_TestCase
 {
     /**
      * @test

@@ -1,14 +1,16 @@
 <?php
+namespace oDesk\API\Tests\Interfaces;
+
 require __DIR__ . '/../../../../vendor/autoload.php';
 
-class InterfaceClientTest extends PHPUnit_Framework_TestCase
+class InterfaceClientTest extends \PHPUnit_Framework_TestCase
 {
     /**
      * @test
      */
     public function testCommon()
     {
-        $reflection = new ReflectionClass('oDesk\API\Interfaces\Client');
+        $reflection = new \ReflectionClass('oDesk\API\Interfaces\Client');
         $this->assertTrue($reflection->isInterface());
         $this->assertTrue($reflection->hasMethod('auth'));
         $this->assertTrue($reflection->hasMethod('request'));
