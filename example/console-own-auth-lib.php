@@ -1,7 +1,7 @@
 <?php
 /**
  * Authentication library for oDesk API using OAuth
- * Example of using your own authentication OAuth client
+ * Example: using your own authentication OAuth client
  *
  * @final
  * @package     oDeskAPI
@@ -49,7 +49,7 @@ if (!empty($_SESSION['access_token']) && !empty($_SESSION['access_secret'])) {
 } else {
     // $accessTokenInfo has the following structure
     // array('access_token' => ..., 'access_secret' => ...);
-    // keeps access token in a secure place
+    // keeps the access token in a secure place
     // gets info of authenticated user
     $accessTokenInfo = $client->auth();
 }
