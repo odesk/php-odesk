@@ -1,6 +1,6 @@
 <?php
 /**
- * oDesk auth library for using with public API by OAuth
+ * Authentication library for oDesk API using OAuth
  *
  * @final
  * @package     oDeskAPI
@@ -12,7 +12,7 @@
 
 require __DIR__ . '/vendor/autoload.php';
 
-// if token are known, they can be read from session
+// if you already have the tokens, they can be read from session
 // or other secure storage
 //$_SESSION['access_token'] = 'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
 //$_SESSION['access_secret']= 'xxxxxxxxxxxx';
@@ -33,22 +33,22 @@ $client = new \oDesk\API\Client($config);
 $accessTokenInfo = $client->auth();
 // $accessTokenInfo has the following structure
 // array('access_token' => ..., 'access_secret' => ...);
-// keep access token in secure place
+// keeps the access token in a secure place
 
-// get list of trays for authed user
+// gets a list of trays for the authenticated user
 $mc = new \oDesk\API\Routers\Mc($client);
 $trays = $mc->getTrays();
 
 print_r($trays);
 
-// get info of authed user
+// gets info of the authenticated user
 $auth = new \oDesk\API\Routers\Auth($client);
 $info = $auth->getUserInfo();
 
 print_r($info);
 
-// try to start a new message thread with wrong parameters
-// to test error response from server (subject is missing)
+// attempts to start a new message thread with wrong parameters
+// to test an error response from the server (the subject is missing)
 $params = array(
     'recipients' => 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
     'body' => 'this is a test message from oDesk Library'
