@@ -23,7 +23,7 @@ $config = new \oDesk\API\Config(
         'consumerSecret'    => 'xxxxxxxxxxxxxx',                // SETUP KEY SECRET
         'accessToken'       => $_SESSION['access_token'],       // got access token
         'accessSecret'      => $_SESSION['access_secret'],      // got access secret
-        'debug'             => true,                            // allows to enable debug mode
+        'debug'             => true,                            // enables debug mode
 //	'authType' => 'MyOAuth' // your own authentication type, see AuthTypes directory
     )
 );
