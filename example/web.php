@@ -24,7 +24,7 @@ $config = new \oDesk\API\Config(
         'verifier'          => $_GET['oauth_verifier'],         // got oauth verifier after authorization
         'mode'              => 'web',                           // can be 'nonweb' for console apps (default),
                                                                 // and 'web' for web-based apps
-//	'debug' => true, // allows enabling debug mode. Note that enabling debug in web-based applications can block redirects
+//	'debug' => true, // enables debug mode. Note that enabling debug in web-based applications can block redirects
 //	'authType' => 'MyOAuth' // your own authentication type, see AuthTypes directory
     )
 );
@@ -41,8 +41,8 @@ if (empty($_SESSION['request_token']) && empty($_SESSION['access_token'])) {
     // request authorization
     $client->auth();
 } elseif (empty($_SESSION['access_token'])) {
-    // callback request should be pointed to this script as well
-    // request access token after callback
+    // the callback request should be pointed to this script as well as
+    // the request access token after the callback
     $accessTokenInfo = $client->auth();
 
     $_SESSION['access_token']   = $accessTokenInfo['access_token'];
