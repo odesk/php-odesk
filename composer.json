@@ -36,8 +36,8 @@
         "psr-0": {
             "oDesk\\API": "src/"
         },
-	    "files": [
-	        "src/oDesk/API/constants.php"
-	    ]
+	"files": [
+	    "src/oDesk/API/constants.php"
+	]
     }
 }
