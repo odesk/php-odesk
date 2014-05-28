@@ -1,7 +1,7 @@
 <?php
 /**
  * oDesk auth library for using with public API by OAuth
- * Provider Profile
+ * Freelancer Profile
  *
  * @final
  * @package     oDeskAPI
@@ -17,9 +17,9 @@ use oDesk\API\Debug as ApiDebug;
 use oDesk\API\Client as ApiClient;
 
 /**
- * Provider Profile
+ * Freelancer Profile
  *
- * @link http://developers.odesk.com/Provider-Profile
+ * @link http://developers.odesk.com/Freelancer-Profile
  */
 final class Profile extends ApiClient
 {
@@ -43,7 +43,7 @@ final class Profile extends ApiClient
     }
 
     /**
-     * Get specific Provider Profile
+     * Get specific Freelancer Profile
      *
      * @param   string $key Profile key
      * @return  object

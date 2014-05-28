@@ -26,7 +26,11 @@
         "ext-oauth": "This extension from PECL provides OAuth consumer and provider bindings. See more under http://www.php.net/oauth"
     },
     "require": {
-	    "php": ">=5.3.3"
+	    "php": ">=5.3.3",
+        "ext-json": "*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "3.7.*"
     },
     "autoload": {
         "psr-0": {

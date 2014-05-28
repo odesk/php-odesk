@@ -43,51 +43,51 @@ final class Billings extends ApiClient
     }
 
     /**
-     * Generate Billing Reports for a Specific Provider
+     * Generate Billing Reports for a Specific Freelancer
      *
-     * @param   integer $providerReference Provider reference
+     * @param   integer $freelancerReference Freelancer reference
      * @param   array $params Parameters
      * @return  object
      */
-    public function getByProvider($providerReference, $params)
+    public function getByFreelancer($freelancerReference, $params)
     {
         ApiDebug::p(__FUNCTION__);
 
-        $report = $this->_client->get('/finreports/v2/providers/' . $providerReference . '/billings', $params);
+        $report = $this->_client->get('/finreports/v2/providers/' . $freelancerReference . '/billings', $params);
         ApiDebug::p('found report info', $report);
 
         return $report;
     }
 
     /**
-     * Generate Billing Reports for a Specific Provider's Team
+     * Generate Billing Reports for a Specific Freelancer's Team
      *
-     * @param   integer $providerTeamReference Provider team reference
+     * @param   integer $freelancerTeamReference Freelancer team reference
      * @param   array $params Parameters
      * @return  object
      */
-    public function getByProvidersTeam($providerTeamReference, $params)
+    public function getByFreelancersTeam($freelancerTeamReference, $params)
     {
         ApiDebug::p(__FUNCTION__);
 
-        $report = $this->_client->get('/finreports/v2/provider_teams/' . $providerTeamReference . '/billings', $params);
+        $report = $this->_client->get('/finreports/v2/provider_teams/' . $freelancerTeamReference . '/billings', $params);
         ApiDebug::p('found report info', $report);
 
         return $report;
     }
 
     /**
-     * Generate Billing Reports for a Specific Provider's Company
+     * Generate Billing Reports for a Specific Freelancer's Company
      *
-     * @param   integer $providerCompanyReference Provider company reference
+     * @param   integer $freelancerCompanyReference Freelancer company reference
      * @param   array $params Parameters
      * @return  object
      */
-    public function getByProvidersCompany($providerCompanyReference, $params)
+    public function getByFreelancersCompany($freelancerCompanyReference, $params)
     {
         ApiDebug::p(__FUNCTION__);
 
-        $report = $this->_client->get('/finreports/v2/provider_companies/' . $providerCompanyReference . '/billings', $params);
+        $report = $this->_client->get('/finreports/v2/provider_companies/' . $freelancerCompanyReference . '/billings', $params);
         ApiDebug::p('found report info', $report);
 
         return $report;

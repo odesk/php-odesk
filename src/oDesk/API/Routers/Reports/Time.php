@@ -132,34 +132,34 @@ final class Time extends ApiClient
     }
 
     /**
-     * Generating Provider Specific Reports (hide financial info)
+     * Generating Freelancer Specific Reports (hide financial info)
      *
-     * @param   string $providerId Freelancer ID
+     * @param   string $freelancerId Freelancer ID
      * @param   array $params Parameters
      * @return  object
      */
-    public function getByProviderLimited($providerId, $params)
+    public function getByFreelancerLimited($freelancerId, $params)
     {
         ApiDebug::p(__FUNCTION__);
 
-        $report = $this->_client->get('/timereports/v1/providers/' . $providerId . '/hours', $params);
+        $report = $this->_client->get('/timereports/v1/providers/' . $freelancerId . '/hours', $params);
         ApiDebug::p('found report info', $report);
 
         return $report;
     }
 
     /**
-     * Generating Provider Specific Reports (with financial info)
+     * Generating Freelancer Specific Reports (with financial info)
      *
-     * @param   string $providerId Freelancer ID
+     * @param   string $freelancerId Freelancer ID
      * @param   array $params Parameters
      * @return  object
      */
-    public function getByProviderFull($providerId, $params)
+    public function getByFreelancerFull($freelancerId, $params)
     {
         ApiDebug::p(__FUNCTION__);
 
-        $report = $this->_client->get('/timereports/v1/providers/' . $providerId, $params);
+        $report = $this->_client->get('/timereports/v1/providers/' . $freelancerId, $params);
         ApiDebug::p('found report info', $report);
 
         return $report;

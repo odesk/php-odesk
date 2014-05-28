@@ -1,7 +1,7 @@
 <?php
 /**
  * oDesk auth library for using with public API by OAuth
- * Contractor's Applications
+ * Freelancer's Applications
  *
  * @final
  * @package     oDeskAPI
@@ -11,13 +11,13 @@
  * @license     oDesk's API Terms of Use {@link http://developers.odesk.com/API-Terms-of-Use}
  */
 
-namespace oDesk\API\Routers\Hr\Contractors;
+namespace oDesk\API\Routers\Hr\Freelancers;
 
 use oDesk\API\Debug as ApiDebug;
 use oDesk\API\Client as ApiClient;
 
 /**
- * Contractor Job Applications API
+ * Freelancer Job Applications API
  *
  * @link http://developers.odesk.com/w/page/46842954/Contracts%20API
  */

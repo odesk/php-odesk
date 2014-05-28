@@ -3,7 +3,7 @@ namespace oDesk\API\Tests\Routers;
 
 require_once __DIR__  . '/CommonTestRouter.php';
 
-class AuthTest extends CommonTestRouter
+class WorkdiaryTest extends CommonTestRouter
 {
     /**
      * Setup
@@ -16,10 +16,10 @@ class AuthTest extends CommonTestRouter
     /**
      * @test
      */
-    public function testGetUserInfo()
+    public function testGet()
     {
-        $router = new \oDesk\API\Routers\Auth($this->_client);
-        $response = $router->getUserInfo();
+        $router = new \oDesk\API\Routers\Workdiary($this->_client);
+        $response = $router->get('company', 'username', '20140101', array());
         
         $this->_checkResponse($response);
     }

@@ -1,7 +1,7 @@
 <?php
 /**
  * oDesk auth library for using with public API by OAuth
- * Search Providers
+ * Search Freelancers
  *
  * @final
  * @package     oDeskAPI
@@ -17,7 +17,7 @@ use oDesk\API\Debug as ApiDebug;
 use oDesk\API\Client as ApiClient;
 
 /**
- * Search Providers
+ * Search Freelancers
  *
  * @link http://developers.odesk.com/search-providers
  */
@@ -43,7 +43,7 @@ final class Search extends ApiClient
     }
 
     /**
-     * Search providers
+     * Search freelancers
      *
      * @param   array $params (Optional) Parameters
      * @return  object

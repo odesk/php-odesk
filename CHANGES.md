@@ -1,5 +1,9 @@
 # Release History
 
+## 0.1.8
+* Added PHPUnit tests
+* Some wording changes
+
 ## 0.1.7
 * Added oTasks API
 
