@@ -1,5 +1,8 @@
 # Release History
 
+## 0.1.9
+* Fixed terminology: Otasks renamed to Activites
+
 ## 0.1.8
 * Added PHPUnit tests
 * Some wording changes

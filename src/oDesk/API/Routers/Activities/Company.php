@@ -1,7 +1,7 @@
 <?php
 /**
  * oDesk auth library for using with public API by OAuth
- * Get oTask records within a team
+ * Get oTask/Activity records within a company
  *
  * @final
  * @package     oDeskAPI
@@ -11,17 +11,17 @@
  * @license     oDesk's API Terms of Use {@link http://developers.odesk.com/API-Terms-of-Use}
  */
 
-namespace oDesk\API\Routers\Otasks;
+namespace oDesk\API\Routers\Activities;
 
 use oDesk\API\Debug as ApiDebug;
 use oDesk\API\Client as ApiClient;
 
 /**
- * Get an oTask record within a team
+ * Get an Activity records within a company
  *
  * @link http://developers.odesk.com/oTasks-API
  */
-final class Team extends ApiClient
+final class Company extends ApiClient
 {
     const ENTRY_POINT = ODESK_API_EP_NAME;
 
@@ -46,12 +46,11 @@ final class Team extends ApiClient
      * Get by type
      *
      * @param   string $company Company ID
-     * @param   string $team Team ID
      * @param   string $code (Optional) Code(s)
      * @param   boolean $isFull (Optional) Full list option
      * @return  object
      */
-    private function _getByType($company, $team, $code = null, $isFull = false)
+    private function _getByType($company, $code = null, $isFull = false)
     {
         ApiDebug::p(__FUNCTION__);
 
@@ -62,122 +61,132 @@ final class Team extends ApiClient
             $_url = '/' . $code;
         }
 
-        $response = $this->_client->get('/otask/v1/tasks/companies/' . $company . '/teams/' . $team . '/tasks' . $_url);
+        $response = $this->_client->get('/otask/v1/tasks/companies/' . $company . '/tasks' . $_url);
         ApiDebug::p('found response info', $response);
 
         return $response;
     }
 
     /**
-     * List all oTask records within a Team
+     * List all oTask/Activity records within a Company
      *
      * @param   string $company Company ID
-     * @param   string $team Team ID
      * @return  object
      */
-    public function getList($company, $team)
+    public function getList($company)
     {
         ApiDebug::p(__FUNCTION__);
 
-        return $this->_getByType($company, $team);
+        return $this->_getByType($company);
     }
 
     /**
-     * List all oTask records within a Team with additional info
+     * List all oTask/Activity records within a Company with additional info
      *
      * @param   string $company Company ID
-     * @param   string $team Team ID
      * @return  object
      */
-    public function getFullList($company, $team)
+    public function getFullList($company)
     {
         ApiDebug::p(__FUNCTION__);
 
-        return $this->_getByType($company, $team, null, true);
+        return $this->_getByType($company, null, true);
     }
 
     /**
-     * List all oTask records within a Team by specified code(s)
+     * List all oTask/Activity records within a Company by specified code(s)
      *
      * @param   string $company Company ID
-     * @param   string $team Team ID
      * @param   string $code Specific code(s)
      * @return  object
      */
-    public function getSpecificList($company, $team, $code)
+    public function getSpecificList($company, $code)
     {
         ApiDebug::p(__FUNCTION__);
 
-        return $this->_getByType($company, $team, $code);
+        return $this->_getByType($company, $code);
     }
 
     /**
-     * Create an oTask record within a Team
+     * Create an oTask/Activity record within a company
      *
      * @param   string $company Company ID
-     * @param   string $team Team ID
      * @param   string $params Parameters
      * @return  object
      */
-    public function addTask($company, $team, $params)
+    public function addActivity($company, $params)
     {
         ApiDebug::p(__FUNCTION__);
 
-        $response = $this->_client->post('/otask/v1/tasks/companies/' . $company . '/teams/' . $team . '/tasks', $params);
+        $response = $this->_client->post('/otask/v1/tasks/companies/' . $company . '/tasks', $params);
         ApiDebug::p('found response info', $response);
 
         return $response;
     }
 
     /**
-     * Update specific oTask record within a Team
+     * Update specific oTask/Activity record within a company
      *
      * @param   string $company Company ID
-     * @param   string $team Team ID
      * @param   string $code Specific code
      * @param   string $params Parameters
      * @return  object
      */
-    public function updateTask($company, $team, $code, $params)
+    public function updateActivity($company, $code, $params)
     {
         ApiDebug::p(__FUNCTION__);
 
-        $response = $this->_client->put('/otask/v1/tasks/companies/' . $company . '/teams/' . $team . '/tasks/' . $code, $params);
+        $response = $this->_client->put('/otask/v1/tasks/companies/' . $company . '/tasks/' . $code, $params);
         ApiDebug::p('found response info', $response);
 
         return $response;
     }
 
     /**
-     * Delete specific oTask record within a Team
+     * Update a group of oTask/Activity records within a company
      *
      * @param   string $company Company ID
-     * @param   string $team Team ID
+     * @param   string $params Parameters
+     * @return  object
+     */
+    public function updateBatch($company, $params)
+    {
+        ApiDebug::p(__FUNCTION__);
+
+        $response = $this->_client->put('/otask/v1/tasks/companies/' . $company . '/tasks/batch', $params);
+        ApiDebug::p('found response info', $response);
+
+        return $response;
+    }
+
+    /**
+     * Delete specific oTask/Activity record within a company
+     *
+     * @param   string $company Company ID
      * @param   string $code Specific code(s)
      * @return  object
      */
-    public function deleteTasks($company, $team, $code)
+    public function deleteActivities($company, $code)
     {
         ApiDebug::p(__FUNCTION__);
 
-        $response = $this->_client->delete('/otask/v1/tasks/companies/' . $company . '/teams/' . $team . '/tasks/' . $code);
+        $response = $this->_client->delete('/otask/v1/tasks/companies/' . $company . '/tasks/' . $code);
         ApiDebug::p('found response info', $response);
 
         return $response;
     }
 
     /**
-     * Delete all oTask records within a Team
+     * Delete all oTask/Activity records within a company
      *
      * @param   string $company Company ID
-     * @param   string $team Team ID
      * @return  object
      */
-    public function deleteAllTasks($company, $team)
+    public function deleteAllActivities($company)
     {
         ApiDebug::p(__FUNCTION__);
 
-        $response = $this->_client->delete('/otask/v1/tasks/companies/' . $company . '/teams/' . $team . '/tasks/all_tasks');
+        $response = $this->_client->delete('/otask/v1/tasks/companies/' . $company . '/tasks/all_tasks');
         ApiDebug::p('found response info', $response);
 
         return $response;

@@ -1,5 +1,5 @@
 <?php
-namespace oDesk\API\Tests\Routers\Otasks;
+namespace oDesk\API\Tests\Routers\Activities;
 
 use oDesk\API\Tests\Routers\CommonTestRouter;
 
@@ -20,7 +20,7 @@ class TeamTest extends CommonTestRouter
      */
     public function testGetList()
     {
-        $router = new \oDesk\API\Routers\Otasks\Team($this->_client);
+        $router = new \oDesk\API\Routers\Activities\Team($this->_client);
         $response = $router->getList('company', 'team');
         
         $this->_checkResponse($response);
@@ -31,7 +31,7 @@ class TeamTest extends CommonTestRouter
      */
     public function testGetFullList()
     {
-        $router = new \oDesk\API\Routers\Otasks\Team($this->_client);
+        $router = new \oDesk\API\Routers\Activities\Team($this->_client);
         $response = $router->getFullList('company', 'team');
         
         $this->_checkResponse($response);
@@ -42,7 +42,7 @@ class TeamTest extends CommonTestRouter
      */
     public function testGetSpecificList()
     {
-        $router = new \oDesk\API\Routers\Otasks\Team($this->_client);
+        $router = new \oDesk\API\Routers\Activities\Team($this->_client);
         $response = $router->getSpecificList('company', 'team', 'code');
         
         $this->_checkResponse($response);
@@ -51,10 +51,10 @@ class TeamTest extends CommonTestRouter
     /**
      * @test
      */
-    public function testAddTask()
+    public function testAddActivity()
     {
-        $router = new \oDesk\API\Routers\Otasks\Team($this->_client);
-        $response = $router->addTask('company', 'team', array());
+        $router = new \oDesk\API\Routers\Activities\Team($this->_client);
+        $response = $router->addActivity('company', 'team', array());
         
         $this->_checkResponse($response);
     }
@@ -62,10 +62,10 @@ class TeamTest extends CommonTestRouter
     /**
      * @test
      */
-    public function testUpdateTask()
+    public function testUpdateActivity()
     {
-        $router = new \oDesk\API\Routers\Otasks\Team($this->_client);
-        $response = $router->updateTask('company', 'team', 'code', array());
+        $router = new \oDesk\API\Routers\Activities\Team($this->_client);
+        $response = $router->updateActivity('company', 'team', 'code', array());
         
         $this->_checkResponse($response);
     }
@@ -73,10 +73,10 @@ class TeamTest extends CommonTestRouter
     /**
      * @test
      */
-    public function testDeleteTasks()
+    public function testDeleteActivities()
     {
-        $router = new \oDesk\API\Routers\Otasks\Team($this->_client);
-        $response = $router->deleteTasks('company', 'team', 'code');
+        $router = new \oDesk\API\Routers\Activities\Team($this->_client);
+        $response = $router->deleteActivities('company', 'team', 'code');
         
         $this->_checkResponse($response);
     }
@@ -84,10 +84,10 @@ class TeamTest extends CommonTestRouter
     /**
      * @test
      */
-    public function testDeleteAllTasks()
+    public function testDeleteAllActivities()
     {
-        $router = new \oDesk\API\Routers\Otasks\Team($this->_client);
-        $response = $router->deleteAllTasks('company', 'team');
+        $router = new \oDesk\API\Routers\Activities\Team($this->_client);
+        $response = $router->deleteAllActivities('company', 'team');
         
         $this->_checkResponse($response);
     }
