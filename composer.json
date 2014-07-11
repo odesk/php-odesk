@@ -29,10 +29,6 @@
         "php": ">=5.3.3",
         "ext-json": "*"
     },
-    "require-dev": {
-        "phpunit/phpunit": "3.7.*",
-        "phpunit/php-invoker": "*"
-    },
     "autoload": {
         "psr-0": {
             "oDesk\\API": "src/"
