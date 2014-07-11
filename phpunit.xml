@@ -15,7 +15,7 @@
   </logging>
   
   <php>
-    <ini name="error_reporting" value="E_ALL & ~E_STRICT" />
+    <ini name="error_reporting" value="E_ALL &amp; ~E_STRICT" />
     <const name="PHPUNIT_TESTSUITE" value="true"/>
   </php>
 </phpunit>
