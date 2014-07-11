@@ -15,4 +15,4 @@ matrix:
     - php: hhvm
   fast_finish: true
 
-script: phpunit --stderr
+script: ./vendor/phpunit/phpunit/phpunit.php --stderr
