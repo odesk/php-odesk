@@ -1,5 +1,8 @@
 # Release History
 
+## 0.1.10
+* Fixed Snapshot API
+
 ## 0.1.9
 * Fixed terminology: Otasks renamed to Activites
 

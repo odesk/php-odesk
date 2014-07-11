@@ -73,7 +73,7 @@ final class Snapshot extends ApiClient
     {
         ApiDebug::p(__FUNCTION__);
 
-        $response = $this->_client->get('/team/v1/snapshots/' . $company . '/' . $username . '/' . $ts, $params);
+        $response = $this->_client->put('/team/v1/snapshots/' . $company . '/' . $username . '/' . $ts, $params);
         ApiDebug::p('found response info', $response);
 
         return $response;
@@ -91,7 +91,7 @@ final class Snapshot extends ApiClient
     {
         ApiDebug::p(__FUNCTION__);
 
-        $response = $this->_client->get('/team/v1/snapshots/' . $company . '/' . $username . '/' . $ts);
+        $response = $this->_client->delete('/team/v1/snapshots/' . $company . '/' . $username . '/' . $ts);
         ApiDebug::p('found response info', $response);
 
         return $response;
