@@ -16,3 +16,9 @@ matrix:
   fast_finish: true
 
 script: ./vendor/phpunit/phpunit/phpunit.php --stderr
+
+notifications:
+  email:
+    recipients:
+      - apisupport@odesk.com
+    on_failure: change
