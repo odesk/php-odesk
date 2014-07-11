@@ -4,7 +4,7 @@ PHP bindings for oDesk API
 [![License](http://img.shields.io/packagist/l/odesk/php-odesk.svg)](http://www.apache.org/licenses/LICENSE-2.0.html)
 [![Latest Stable Version](https://poser.pugx.org/odesk/php-odesk/v/stable.svg)](https://github.com/odesk/php-odesk/releases)
 [![Package version](http://img.shields.io/packagist/v/odesk/php-odesk.svg)](https://packagist.org/packages/odesk/php-odesk)
-[![Build status](http://img.shields.io/travis/odesk/php-odesk/dev.svg)](http://travis-ci.org/odesk/php-odesk)
+[![Build status](https://travis-ci.org/odesk/php-odesk.svg)](http://travis-ci.org/odesk/php-odesk)
 [![Monthly downloads](http://img.shields.io/packagist/dm/odesk/php-odesk.svg)](https://packagist.org/packages/odesk/php-odesk)
 
 # Introduction
