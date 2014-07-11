@@ -116,7 +116,7 @@ want to use it, or have no possibility to install it, you may want to use a prel
 php library, called oauth-php (read more in vendor-src/README).
 
 copy `vendor/odesk/php-odesk/example/console.php` to the `myapp.php` if you have
-ext-oauth installed
+`ext-oauth` installed
 
 or
 
