@@ -6,6 +6,7 @@ PHP bindings for oDesk API
 [![Package version](http://img.shields.io/packagist/v/odesk/php-odesk.svg)](https://packagist.org/packages/odesk/php-odesk)
 [![Build status](https://travis-ci.org/odesk/php-odesk.svg)](http://travis-ci.org/odesk/php-odesk)
 [![Monthly downloads](http://img.shields.io/packagist/dm/odesk/php-odesk.svg)](https://packagist.org/packages/odesk/php-odesk)
+[![Issues](http://img.shields.io/github/issues/odesk/php-odesk.svg)](https://github.com/odesk/php-odesk/issues)
 
 # Introduction
 This project provides a set of resources of oDesk API from http://developers.odesk.com
