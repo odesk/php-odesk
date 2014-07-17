@@ -1,5 +1,8 @@
 # Release History
 
+## 0.1.11
+* Code cleanup - drop unsupported API
+
 ## 0.1.10
 * Fixed Snapshot API
 
