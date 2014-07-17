@@ -43,23 +43,6 @@ final class Payments extends ApiClient
     }
 
     /**
-     * Get Adjustments
-     *
-     * @param   integer $teamReference Team reference
-     * @param   array $params Parameters
-     * @return  object
-     */
-    public function getAdjustments($teamReference, $params)
-    {
-        ApiDebug::p(__FUNCTION__);
-
-        $adjustments = $this->_client->get('/hr/v2/teams/' . $teamReference . '/adjustments', $params);
-        ApiDebug::p('found adjustments info', $adjustments);
-
-        return $adjustments;
-    }
-
-    /**
      * Submit a Custom Payment
      *
      * @param   integer $teamReference Team reference

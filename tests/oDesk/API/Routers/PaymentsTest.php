@@ -16,17 +16,6 @@ class PaymentsTest extends CommonTestRouter
     /**
      * @test
      */
-    public function testGetAdjustments()
-    {
-        $router = new \oDesk\API\Routers\Payments($this->_client);
-        $response = $router->getAdjustments('12345', array());
-        
-        $this->_checkResponse($response);
-    }
-
-    /**
-     * @test
-     */
     public function testSubmitBonus()
     {
         $router = new \oDesk\API\Routers\Payments($this->_client);
