@@ -43,7 +43,7 @@ final class Offers extends ApiClient
     }
 
     /**
-     * Get list of applications
+     * Get list of offers
      *
      * @param   array $params Parameters
      * @return  object
@@ -59,7 +59,7 @@ final class Offers extends ApiClient
     }
 
     /**
-     * Get specific application
+     * Get specific offer
      *
      * @param   integer $reference Offer reference
      * @return  object
