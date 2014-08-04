@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<meta name="generator" content="ApiGen 2.8.0">
 
-	<title>Class oDesk\API\Routers\Hr\Engagements</title>
+	<title>Class oDesk\API\Routers\Activities\Engagement</title>
 
 	<script type="text/javascript" src="resources/combined.js?3770084987"></script>
 	<script type="text/javascript" src="elementlist.js?52196348"></script>
@@ -31,11 +31,11 @@
 						</li>
 				<li class="active"><a href="namespace-oDesk.API.Routers.html">Routers<span></span></a>
 						<ul>
-				<li><a href="namespace-oDesk.API.Routers.Activities.html">Activities</a>
+				<li class="active"><a href="namespace-oDesk.API.Routers.Activities.html">Activities</a>
 						</li>
 				<li><a href="namespace-oDesk.API.Routers.Freelancers.html">Freelancers</a>
 						</li>
-				<li class="active"><a href="namespace-oDesk.API.Routers.Hr.html">Hr<span></span></a>
+				<li><a href="namespace-oDesk.API.Routers.Hr.html">Hr<span></span></a>
 						<ul>
 				<li><a href="namespace-oDesk.API.Routers.Hr.Clients.html">Clients</a>
 						</li>
@@ -62,11 +62,9 @@
 		<div id="elements">
 			<h3>Classes</h3>
 			<ul>
-				<li><a href="class-oDesk.API.Routers.Hr.Contracts.html">Contracts</a></li>
-				<li class="active"><a href="class-oDesk.API.Routers.Hr.Engagements.html">Engagements</a></li>
-				<li><a href="class-oDesk.API.Routers.Hr.Interviews.html">Interviews</a></li>
-				<li><a href="class-oDesk.API.Routers.Hr.Jobs.html">Jobs</a></li>
-				<li><a href="class-oDesk.API.Routers.Hr.Roles.html">Roles</a></li>
+				<li><a href="class-oDesk.API.Routers.Activities.Company.html">Company</a></li>
+				<li class="active"><a href="class-oDesk.API.Routers.Activities.Engagement.html">Engagement</a></li>
+				<li><a href="class-oDesk.API.Routers.Activities.Team.html">Team</a></li>
 			</ul>
 
 
@@ -94,7 +92,7 @@
 				<a href="index.html" title="Overview"><span>Overview</span></a>
 			</li>
 			<li>
-				<a href="namespace-oDesk.API.Routers.Hr.html" title="Summary of oDesk\API\Routers\Hr"><span>Namespace</span></a>
+				<a href="namespace-oDesk.API.Routers.Activities.html" title="Summary of oDesk\API\Routers\Activities"><span>Namespace</span></a>
 			</li>
 			<li class="active">
 <span>Class</span>			</li>
@@ -109,12 +107,12 @@
 	</div>
 
 <div id="content" class="class">
-	<h1>Class Engagements</h1>
+	<h1>Class Engagement</h1>
 
 
 	<div class="description">
 	
-<p>Engagements API</p>
+<p>Get an Activity records by contract/engagement</p>
 
 	</div>
 
@@ -127,7 +125,7 @@
 		</dd>
 		<dd style="padding-left:30px">
 			<img src="resources/inherit.png" alt="Extended by">
-<b><span>oDesk\API\Routers\Hr\Engagements</span></b>			
+<b><span>oDesk\API\Routers\Activities\Engagement</span></b>			
 			
 			
 		</dd>
@@ -143,12 +141,12 @@
 	<div class="info">
 		<b>Final</b><br>
 		
-		<b>Namespace:</b> <a href="namespace-oDesk.html">oDesk</a>\<a href="namespace-oDesk.API.html">API</a>\<a href="namespace-oDesk.API.Routers.html">Routers</a>\<a href="namespace-oDesk.API.Routers.Hr.html">Hr</a><br>
+		<b>Namespace:</b> <a href="namespace-oDesk.html">oDesk</a>\<a href="namespace-oDesk.API.html">API</a>\<a href="namespace-oDesk.API.Routers.html">Routers</a>\<a href="namespace-oDesk.API.Routers.Activities.html">Activities</a><br>
 		
 
 				<b>Link:</b>
-				<a href="http://developers.odesk.com/Engagements-API">http://developers.odesk.com/Engagements-API</a><br>
-		<b>Located at</b> <a href="source-class-oDesk.API.Routers.Hr.Engagements.html#19-76" title="Go to source code">oDesk/API/Routers/Hr/Engagements.php</a><br>
+				<a href="http://developers.odesk.com/oTasks-API">http://developers.odesk.com/oTasks-API</a><br>
+		<b>Located at</b> <a href="source-class-oDesk.API.Routers.Activities.Engagement.html#19-77" title="Go to source code">oDesk/API/Routers/Activities/Engagement.php</a><br>
 	</div>
 
 
@@ -166,7 +164,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#___construct">#</a>
-		<code><a href="source-class-oDesk.API.Routers.Hr.Engagements.html#33-43" title="Go to source code">__construct</a>( <span><code><a href="class-oDesk.API.Client.html">oDesk\API\Client</a></code> <var>$client</var></span> )</code>
+		<code><a href="source-class-oDesk.API.Routers.Activities.Engagement.html#33-43" title="Go to source code">__construct</a>( <span><code><a href="class-oDesk.API.Client.html">oDesk\API\Client</a></code> <var>$client</var></span> )</code>
 
 		<div class="description short">
 			
@@ -195,7 +193,7 @@
 		</div>
 		</div></td>
 	</tr>
-	<tr data-order="getList" id="_getList">
+	<tr data-order="getSpecific" id="_getSpecific">
 
 		<td class="attributes"><code>
 			 public 
@@ -205,25 +203,25 @@
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#_getList">#</a>
-		<code><a href="source-class-oDesk.API.Routers.Hr.Engagements.html#45-59" title="Go to source code">getList</a>( <span>array <var>$params</var></span> )</code>
+		<a class="anchor" href="#_getSpecific">#</a>
+		<code><a href="source-class-oDesk.API.Routers.Activities.Engagement.html#45-59" title="Go to source code">getSpecific</a>( <span>integer <var>$engagement_ref</var></span> )</code>
 
 		<div class="description short">
 			
-<p>Get list of engagements</p>
+<p>List activities for specific engagement</p>
 
 		</div>
 
 		<div class="description detailed hidden">
 			
-<p>Get list of engagements</p>
+<p>List activities for specific engagement</p>
 
 
 
 				<h4>Parameters</h4>
 				<div class="list"><dl>
-					<dt><var>$params</var></dt>
-					<dd><code>array</code><br>$params Parameters</dd>
+					<dt><var>$engagement_ref</var></dt>
+					<dd><code>integer</code><br>$engagement_ref Engagement reference</dd>
 				</dl></div>
 
 				<h4>Returns</h4>
@@ -237,7 +235,7 @@
 		</div>
 		</div></td>
 	</tr>
-	<tr data-order="getSpecific" id="_getSpecific">
+	<tr data-order="assign" id="_assign">
 
 		<td class="attributes"><code>
 			 public 
@@ -247,25 +245,31 @@
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#_getSpecific">#</a>
-		<code><a href="source-class-oDesk.API.Routers.Hr.Engagements.html#61-75" title="Go to source code">getSpecific</a>( <span>integer <var>$reference</var></span> )</code>
+		<a class="anchor" href="#_assign">#</a>
+		<code><a href="source-class-oDesk.API.Routers.Activities.Engagement.html#61-76" title="Go to source code">assign</a>( <span>string <var>$company</var></span>, <span>integer <var>$team</var></span>, <span>mixed <var>$engagement</var></span>, <span>mixed <var>$params</var></span> )</code>
 
 		<div class="description short">
 			
-<p>Get specific engagement</p>
+<p>Assign engagements to the list of activities</p>
 
 		</div>
 
 		<div class="description detailed hidden">
 			
-<p>Get specific engagement</p>
+<p>Assign engagements to the list of activities</p>
 
 
 
 				<h4>Parameters</h4>
 				<div class="list"><dl>
-					<dt><var>$reference</var></dt>
-					<dd><code>integer</code><br>$reference Engagement's reference</dd>
+					<dt><var>$company</var></dt>
+					<dd><code>string</code><br>$company</dd>
+					<dt><var>$team</var></dt>
+					<dd><code>integer</code><br>$engagement Engagement</dd>
+					<dt><var>$engagement</var></dt>
+					<dd></dd>
+					<dt><var>$params</var></dt>
+					<dd></dd>
 				</dl></div>
 
 				<h4>Returns</h4>
@@ -309,7 +313,7 @@
 
 		<td class="attributes"><code>mixed</code></td>
 		<td class="name"><code>
-				<a href="source-class-oDesk.API.Routers.Hr.Engagements.html#26" title="Go to source code"><b>ENTRY_POINT</b></a>
+				<a href="source-class-oDesk.API.Routers.Activities.Engagement.html#26" title="Go to source code"><b>ENTRY_POINT</b></a>
 		</code></td>
 		<td class="value"><code>ODESK_API_EP_NAME</code></td>
 		<td class="description"><div>

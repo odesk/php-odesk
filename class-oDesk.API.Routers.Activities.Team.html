@@ -7,7 +7,7 @@
 	<title>Class oDesk\API\Routers\Activities\Team</title>
 
 	<script type="text/javascript" src="resources/combined.js?3770084987"></script>
-	<script type="text/javascript" src="elementlist.js?1137057393"></script>
+	<script type="text/javascript" src="elementlist.js?52196348"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360">
 
 </head>
@@ -63,8 +63,8 @@
 			<h3>Classes</h3>
 			<ul>
 				<li><a href="class-oDesk.API.Routers.Activities.Company.html">Company</a></li>
+				<li><a href="class-oDesk.API.Routers.Activities.Engagement.html">Engagement</a></li>
 				<li class="active"><a href="class-oDesk.API.Routers.Activities.Team.html">Team</a></li>
-				<li><a href="class-oDesk.API.Routers.Activities.User.html">User</a></li>
 			</ul>
 
 
@@ -146,7 +146,7 @@
 
 				<b>Link:</b>
 				<a href="http://developers.odesk.com/oTasks-API">http://developers.odesk.com/oTasks-API</a><br>
-		<b>Located at</b> <a href="source-class-oDesk.API.Routers.Activities.Team.html#19-185" title="Go to source code">oDesk/API/Routers/Activities/Team.php</a><br>
+		<b>Located at</b> <a href="source-class-oDesk.API.Routers.Activities.Team.html#19-221" title="Go to source code">oDesk/API/Routers/Activities/Team.php</a><br>
 	</div>
 
 
@@ -421,6 +421,98 @@
 		</div>
 		</div></td>
 	</tr>
+	<tr data-order="archiveActivities" id="_archiveActivities">
+
+		<td class="attributes"><code>
+			 public 
+			object
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_archiveActivities">#</a>
+		<code><a href="source-class-oDesk.API.Routers.Activities.Team.html#151-167" title="Go to source code">archiveActivities</a>( <span>string <var>$company</var></span>, <span>string <var>$team</var></span>, <span>string <var>$code</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Archive specific oTask/Activity record within a Team</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Archive specific oTask/Activity record within a Team</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$company</var></dt>
+					<dd><code>string</code><br>$company Company ID</dd>
+					<dt><var>$team</var></dt>
+					<dd><code>string</code><br>$team Team ID</dd>
+					<dt><var>$code</var></dt>
+					<dd><code>string</code><br>$code Specific code(s)</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>object</code><br>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="unarchiveActivities" id="_unarchiveActivities">
+
+		<td class="attributes"><code>
+			 public 
+			object
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_unarchiveActivities">#</a>
+		<code><a href="source-class-oDesk.API.Routers.Activities.Team.html#169-185" title="Go to source code">unarchiveActivities</a>( <span>string <var>$company</var></span>, <span>string <var>$team</var></span>, <span>string <var>$code</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Unarchive specific oTask/Activity record within a Team</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Unarchive specific oTask/Activity record within a Team</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$company</var></dt>
+					<dd><code>string</code><br>$company Company ID</dd>
+					<dt><var>$team</var></dt>
+					<dd><code>string</code><br>$team Team ID</dd>
+					<dt><var>$code</var></dt>
+					<dd><code>string</code><br>$code Specific code(s)</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>object</code><br>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
 	<tr data-order="deleteActivities" id="_deleteActivities">
 
 		<td class="attributes"><code>
@@ -432,7 +524,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_deleteActivities">#</a>
-		<code><a href="source-class-oDesk.API.Routers.Activities.Team.html#151-167" title="Go to source code">deleteActivities</a>( <span>string <var>$company</var></span>, <span>string <var>$team</var></span>, <span>string <var>$code</var></span> )</code>
+		<code><a href="source-class-oDesk.API.Routers.Activities.Team.html#187-203" title="Go to source code">deleteActivities</a>( <span>string <var>$company</var></span>, <span>string <var>$team</var></span>, <span>string <var>$code</var></span> )</code>
 
 		<div class="description short">
 			
@@ -478,7 +570,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_deleteAllActivities">#</a>
-		<code><a href="source-class-oDesk.API.Routers.Activities.Team.html#169-184" title="Go to source code">deleteAllActivities</a>( <span>string <var>$company</var></span>, <span>string <var>$team</var></span> )</code>
+		<code><a href="source-class-oDesk.API.Routers.Activities.Team.html#205-220" title="Go to source code">deleteAllActivities</a>( <span>string <var>$company</var></span>, <span>string <var>$team</var></span> )</code>
 
 		<div class="description short">
 			
