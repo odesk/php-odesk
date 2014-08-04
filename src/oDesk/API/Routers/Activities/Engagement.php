@@ -1,27 +1,27 @@
 <?php
 /**
  * oDesk auth library for using with public API by OAuth
- * Client's Applications
+ * Get oTask/Activity records by contract/engagement
  *
  * @final
  * @package     oDeskAPI
- * @since       05/09/2014
+ * @since       08/04/2014
  * @copyright   Copyright 2014(c) oDesk.com
  * @author      Maksym Novozhylov <mnovozhilov@odesk.com>
  * @license     oDesk's API Terms of Use {@link http://developers.odesk.com/API-Terms-of-Use}
  */
 
-namespace oDesk\API\Routers\Hr\Clients;
+namespace oDesk\API\Routers\Activities;
 
 use oDesk\API\Debug as ApiDebug;
 use oDesk\API\Client as ApiClient;
 
 /**
- * Client Job Applications API
+ * Get an Activity records by contract/engagement
  *
- * @link http://developers.odesk.com/w/page/75436187/Client%20Job%20Applications
+ * @link http://developers.odesk.com/oTasks-API
  */
-final class Applications extends ApiClient
+final class Engagement extends ApiClient
 {
     const ENTRY_POINT = ODESK_API_EP_NAME;
 
@@ -43,33 +43,33 @@ final class Applications extends ApiClient
     }
 
     /**
-     * Get list of applications
+     * List activities for specific engagement
      *
-     * @param   array $params Parameters
+     * @param   integer $engagement_ref Engagement reference
      * @return  object
      */
-    public function getList($params)
+    public function getSpecific($engagement_ref)
     {
         ApiDebug::p(__FUNCTION__);
 
-        $response = $this->_client->get('/hr/v3/clients/applications', $params);
+        $response = $this->_client->get('/tasks/v2/tasks/contracts/' . $engagement_ref);
         ApiDebug::p('found response info', $response);
 
         return $response;
     }
 
     /**
-     * Get specific application
+     * Assign engagements to the list of activities
      *
-     * @param   integer $reference Application reference
-     * @param   array $params Parameters
+     * @param   string  $company 
+     * @param   integer $engagement Engagement
      * @return  object
      */
-    public function getSpecific($reference, $params)
+    public function assign($company, $team, $engagement, $params)
     {
         ApiDebug::p(__FUNCTION__);
 
-        $response = $this->_client->get('/hr/v3/clients/applications/' . $reference, $params);
+        $response = $this->_client->put('/otask/v2/tasks/companies/' .$company . '/teams/' . $team . '/engagements/' . $engagement . '/tasks');
         ApiDebug::p('found response info', $response);
 
         return $response;

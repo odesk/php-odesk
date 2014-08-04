@@ -1,5 +1,11 @@
 # Release History
 
+## 0.1.12
+* Added archive/unarchive oTasks API
+* Added Get Codes by Activity for oTasks
+* Deprecated Get Codes for specific user in oTasks API
+* Fixed Client Job Applications API
+
 ## 0.1.11
 * Code cleanup - drop unsupported API
 

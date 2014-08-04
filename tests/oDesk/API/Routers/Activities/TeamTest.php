@@ -73,6 +73,28 @@ class TeamTest extends CommonTestRouter
     /**
      * @test
      */
+    public function testArchiveActivities()
+    {
+        $router = new \oDesk\API\Routers\Activities\Team($this->_client);
+        $response = $router->archiveActivities('company', 'team', 'code');
+        
+        $this->_checkResponse($response);
+    }
+
+    /**
+     * @test
+     */
+    public function testUnarchiveActivities()
+    {
+        $router = new \oDesk\API\Routers\Activities\Team($this->_client);
+        $response = $router->UnarchiveActivities('company', 'team', 'code');
+        
+        $this->_checkResponse($response);
+    }
+
+    /**
+     * @test
+     */
     public function testDeleteActivities()
     {
         $router = new \oDesk\API\Routers\Activities\Team($this->_client);

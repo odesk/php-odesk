@@ -32,7 +32,7 @@ class OffersTest extends CommonTestRouter
     public function testGetSpecific()
     {
         $router = new \oDesk\API\Routers\Hr\Clients\Offers($this->_client);
-        $response = $router->getSpecific('12345');
+        $response = $router->getSpecific('12345', array());
         
         $this->_checkResponse($response);
     }

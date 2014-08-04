@@ -62,13 +62,14 @@ final class Offers extends ApiClient
      * Get specific offer
      *
      * @param   integer $reference Offer reference
+     * @param   array $params Parameters
      * @return  object
      */
-    public function getSpecific($reference)
+    public function getSpecific($reference, $params)
     {
         ApiDebug::p(__FUNCTION__);
 
-        $response = $this->_client->get('/offers/v1/clients/offers/' . $reference);
+        $response = $this->_client->get('/offers/v1/clients/offers/' . $reference, $params);
         ApiDebug::p('found response info', $response);
 
         return $response;

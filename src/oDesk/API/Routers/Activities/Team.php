@@ -149,6 +149,42 @@ final class Team extends ApiClient
     }
 
     /**
+     * Archive specific oTask/Activity record within a Team
+     *
+     * @param   string $company Company ID
+     * @param   string $team Team ID
+     * @param   string $code Specific code(s)
+     * @return  object
+     */
+    public function archiveActivities($company, $team, $code)
+    {
+        ApiDebug::p(__FUNCTION__);
+
+        $response = $this->_client->put('/otask/v1/tasks/companies/' . $company . '/teams/' . $team . '/archive/' . $code);
+        ApiDebug::p('found response info', $response);
+
+        return $response;
+    }
+
+    /**
+     * Unarchive specific oTask/Activity record within a Team
+     *
+     * @param   string $company Company ID
+     * @param   string $team Team ID
+     * @param   string $code Specific code(s)
+     * @return  object
+     */
+    public function unarchiveActivities($company, $team, $code)
+    {
+        ApiDebug::p(__FUNCTION__);
+
+        $response = $this->_client->put('/otask/v1/tasks/companies/' . $company . '/teams/' . $team . '/unarchive/' . $code);
+        ApiDebug::p('found response info', $response);
+
+        return $response;
+    }
+
+    /**
      * Delete specific oTask/Activity record within a Team
      *
      * @param   string $company Company ID
