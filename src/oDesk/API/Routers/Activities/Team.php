@@ -116,7 +116,7 @@ final class Team extends ApiClient
      *
      * @param   string $company Company ID
      * @param   string $team Team ID
-     * @param   string $params Parameters
+     * @param   array $params Parameters
      * @return  object
      */
     public function addActivity($company, $team, $params)
@@ -135,7 +135,7 @@ final class Team extends ApiClient
      * @param   string $company Company ID
      * @param   string $team Team ID
      * @param   string $code Specific code
-     * @param   string $params Parameters
+     * @param   array $params Parameters
      * @return  object
      */
     public function updateActivity($company, $team, $code, $params)

@@ -111,7 +111,7 @@ final class Company extends ApiClient
      * Create an oTask/Activity record within a company
      *
      * @param   string $company Company ID
-     * @param   string $params Parameters
+     * @param   params $params Parameters
      * @return  object
      */
     public function addActivity($company, $params)
@@ -129,7 +129,7 @@ final class Company extends ApiClient
      *
      * @param   string $company Company ID
      * @param   string $code Specific code
-     * @param   string $params Parameters
+     * @param   array $params Parameters
      * @return  object
      */
     public function updateActivity($company, $code, $params)
@@ -146,7 +146,7 @@ final class Company extends ApiClient
      * Update a group of oTask/Activity records within a company
      *
      * @param   string $company Company ID
-     * @param   string $params Parameters
+     * @param   array $params Parameters
      * @return  object
      */
     public function updateBatch($company, $params)
