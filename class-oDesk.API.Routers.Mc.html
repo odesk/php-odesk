@@ -7,7 +7,7 @@
 	<title>Class oDesk\API\Routers\Mc</title>
 
 	<script type="text/javascript" src="resources/combined.js?3770084987"></script>
-	<script type="text/javascript" src="elementlist.js?52196348"></script>
+	<script type="text/javascript" src="elementlist.js?3133165041"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360">
 
 </head>
@@ -150,7 +150,7 @@
 
 				<b>Link:</b>
 				<a href="http://developers.odesk.com/Message-Center-API">http://developers.odesk.com/Message-Center-API</a><br>
-		<b>Located at</b> <a href="source-class-oDesk.API.Routers.Mc.html#18-151" title="Go to source code">oDesk/API/Routers/Mc.php</a><br>
+		<b>Located at</b> <a href="source-class-oDesk.API.Routers.Mc.html#18-192" title="Go to source code">oDesk/API/Routers/Mc.php</a><br>
 	</div>
 
 
@@ -322,6 +322,102 @@
 		</div>
 		</div></td>
 	</tr>
+	<tr data-order="getThreadByContext" id="_getThreadByContext">
+
+		<td class="attributes"><code>
+			 public 
+			object
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getThreadByContext">#</a>
+		<code><a href="source-class-oDesk.API.Routers.Mc.html#96-114" title="Go to source code">getThreadByContext</a>( <span>string <var>$username</var></span>, <span>string <var>$jobKey</var></span>, <span>integer <var>$applicationId</var></span>, <span>string <var>$contexts</var> = <span class="php-quote">'Interviews'</span></span> )</code>
+
+		<div class="description short">
+			
+<p>Get a specific thread by context</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Get a specific thread by context</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$username</var></dt>
+					<dd><code>string</code><br>$username Username</dd>
+					<dt><var>$jobKey</var></dt>
+					<dd><code>string</code><br>$jobKey Job key</dd>
+					<dt><var>$applicationId</var></dt>
+					<dd><code>integer</code><br>$applicationId Application ID</dd>
+					<dt><var>$contexts</var></dt>
+					<dd><code>string</code><br>$context (Optional) Context</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>object</code><br>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getThreadByContextLastPosts" id="_getThreadByContextLastPosts">
+
+		<td class="attributes"><code>
+			 public 
+			object
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getThreadByContextLastPosts">#</a>
+		<code><a href="source-class-oDesk.API.Routers.Mc.html#117-135" title="Go to source code">getThreadByContextLastPosts</a>( <span>string <var>$username</var></span>, <span>string <var>$jobKey</var></span>, <span>integer <var>$applicationId</var></span>, <span>string <var>$contexts</var> = <span class="php-quote">'Interviews'</span></span> )</code>
+
+		<div class="description short">
+			
+<p>Get a specific thread by context (last message content)</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Get a specific thread by context (last message content)</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$username</var></dt>
+					<dd><code>string</code><br>$username Username</dd>
+					<dt><var>$jobKey</var></dt>
+					<dd><code>string</code><br>$jobKey Job key</dd>
+					<dt><var>$applicationId</var></dt>
+					<dd><code>integer</code><br>$applicationId Application ID</dd>
+					<dt><var>$contexts</var></dt>
+					<dd><code>string</code><br>$context (Optional) Context</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>object</code><br>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
 	<tr data-order="markThread" id="_markThread">
 
 		<td class="attributes"><code>
@@ -333,7 +429,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_markThread">#</a>
-		<code><a href="source-class-oDesk.API.Routers.Mc.html#96-113" title="Go to source code">markThread</a>( <span>string <var>$username</var></span>, <span>integer <var>$threadId</var></span>, <span>array <var>$params</var></span> )</code>
+		<code><a href="source-class-oDesk.API.Routers.Mc.html#137-154" title="Go to source code">markThread</a>( <span>string <var>$username</var></span>, <span>integer <var>$threadId</var></span>, <span>array <var>$params</var></span> )</code>
 
 		<div class="description short">
 			
@@ -379,7 +475,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_startNewThread">#</a>
-		<code><a href="source-class-oDesk.API.Routers.Mc.html#115-131" title="Go to source code">startNewThread</a>( <span>string <var>$username</var></span>, <span>array <var>$params</var></span> )</code>
+		<code><a href="source-class-oDesk.API.Routers.Mc.html#156-172" title="Go to source code">startNewThread</a>( <span>string <var>$username</var></span>, <span>array <var>$params</var></span> )</code>
 
 		<div class="description short">
 			
@@ -423,7 +519,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_replyToThread">#</a>
-		<code><a href="source-class-oDesk.API.Routers.Mc.html#133-150" title="Go to source code">replyToThread</a>( <span>string <var>$username</var></span>, <span>integer <var>$threadId</var></span>, <span>array <var>$params</var></span> )</code>
+		<code><a href="source-class-oDesk.API.Routers.Mc.html#174-191" title="Go to source code">replyToThread</a>( <span>string <var>$username</var></span>, <span>integer <var>$threadId</var></span>, <span>array <var>$params</var></span> )</code>
 
 		<div class="description short">
 			
