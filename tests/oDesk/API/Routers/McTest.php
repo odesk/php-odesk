@@ -49,6 +49,28 @@ class McTest extends CommonTestRouter
     /**
      * @test
      */
+    public function testGetThreadByContext()
+    {
+        $router = new \oDesk\API\Routers\Mc($this->_client);
+        $response = $router->getThreadByContext('username', '~key', 12345);
+        
+        $this->_checkResponse($response);
+    }
+
+    /**
+     * @test
+     */
+    public function testGetThreadByContextLastPosts()
+    {
+        $router = new \oDesk\API\Routers\Mc($this->_client);
+        $response = $router->getThreadByContextLastPosts('username', '~key', 12345);
+        
+        $this->_checkResponse($response);
+    }
+
+    /**
+     * @test
+     */
     public function testMarkThread()
     {
         $router = new \oDesk\API\Routers\Mc($this->_client);

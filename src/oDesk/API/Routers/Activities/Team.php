@@ -48,17 +48,14 @@ final class Team extends ApiClient
      * @param   string $company Company ID
      * @param   string $team Team ID
      * @param   string $code (Optional) Code(s)
-     * @param   boolean $isFull (Optional) Full list option
      * @return  object
      */
-    private function _getByType($company, $team, $code = null, $isFull = false)
+    private function _getByType($company, $team, $code = null)
     {
         ApiDebug::p(__FUNCTION__);
 
         $_url = '';
-        if ($isFull) {
-            $_url = '/full_list';
-        } elseif (!empty($code)) {
+        if (!empty($code)) {
             $_url = '/' . $code;
         }
 
@@ -80,20 +77,6 @@ final class Team extends ApiClient
         ApiDebug::p(__FUNCTION__);
 
         return $this->_getByType($company, $team);
-    }
-
-    /**
-     * List all oTask/Activity records within a Team with additional info
-     *
-     * @param   string $company Company ID
-     * @param   string $team Team ID
-     * @return  object
-     */
-    public function getFullList($company, $team)
-    {
-        ApiDebug::p(__FUNCTION__);
-
-        return $this->_getByType($company, $team, null, true);
     }
 
     /**
@@ -179,41 +162,6 @@ final class Team extends ApiClient
         ApiDebug::p(__FUNCTION__);
 
         $response = $this->_client->put('/otask/v1/tasks/companies/' . $company . '/teams/' . $team . '/unarchive/' . $code);
-        ApiDebug::p('found response info', $response);
-
-        return $response;
-    }
-
-    /**
-     * Delete specific oTask/Activity record within a Team
-     *
-     * @param   string $company Company ID
-     * @param   string $team Team ID
-     * @param   string $code Specific code(s)
-     * @return  object
-     */
-    public function deleteActivities($company, $team, $code)
-    {
-        ApiDebug::p(__FUNCTION__);
-
-        $response = $this->_client->delete('/otask/v1/tasks/companies/' . $company . '/teams/' . $team . '/tasks/' . $code);
-        ApiDebug::p('found response info', $response);
-
-        return $response;
-    }
-
-    /**
-     * Delete all oTask/Activity records within a Team
-     *
-     * @param   string $company Company ID
-     * @param   string $team Team ID
-     * @return  object
-     */
-    public function deleteAllActivities($company, $team)
-    {
-        ApiDebug::p(__FUNCTION__);
-
-        $response = $this->_client->delete('/otask/v1/tasks/companies/' . $company . '/teams/' . $team . '/tasks/all_tasks');
         ApiDebug::p('found response info', $response);
 
         return $response;

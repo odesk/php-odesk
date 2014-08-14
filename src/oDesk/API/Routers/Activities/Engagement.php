@@ -69,7 +69,7 @@ final class Engagement extends ApiClient
     {
         ApiDebug::p(__FUNCTION__);
 
-        $response = $this->_client->put('/otask/v2/tasks/companies/' .$company . '/teams/' . $team . '/engagements/' . $engagement . '/tasks');
+        $response = $this->_client->put('/otask/v2/tasks/companies/' .$company . '/teams/' . $team . '/engagements/' . $engagement . '/tasks', $params);
         ApiDebug::p('found response info', $response);
 
         return $response;

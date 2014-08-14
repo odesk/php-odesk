@@ -94,6 +94,47 @@ final class Mc extends ApiClient
     }
 
     /**
+     * Get a specific thread by context
+     *
+     * @param   string $username Username
+     * @param   string $jobKey Job key
+     * @param   integer $applicationId Application ID
+     * @param   string $context (Optional) Context
+     * @access  public
+     * @return  object
+     */
+    public function getThreadByContext($username, $jobKey, $applicationId, $contexts = 'Interviews')
+    {
+        ApiDebug::p(__FUNCTION__);
+
+        $response = $this->_client->get('/mc/v1/contexts/' . $username . '/' . $context . ':' . $jobKey . ':' . $applicationId);
+        ApiDebug::p('found thread', $response);
+
+        return $response;
+    }
+
+
+    /**
+     * Get a specific thread by context (last message content)
+     *
+     * @param   string $username Username
+     * @param   string $jobKey Job key
+     * @param   integer $applicationId Application ID
+     * @param   string $context (Optional) Context
+     * @access  public
+     * @return  object
+     */
+    public function getThreadByContextLastPosts($username, $jobKey, $applicationId, $contexts = 'Interviews')
+    {
+        ApiDebug::p(__FUNCTION__);
+
+        $response = $this->_client->get('/mc/v1/contexts/' . $username . '/' . $context . ':' . $jobKey . ':' . $applicationId . '/last_posts');
+        ApiDebug::p('found thread', $response);
+
+        return $response;
+    }
+
+    /**
      * Update threads based on user actions
      *
      * @param   string $username Username

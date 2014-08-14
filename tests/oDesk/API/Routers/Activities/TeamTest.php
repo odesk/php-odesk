@@ -29,17 +29,6 @@ class TeamTest extends CommonTestRouter
     /**
      * @test
      */
-    public function testGetFullList()
-    {
-        $router = new \oDesk\API\Routers\Activities\Team($this->_client);
-        $response = $router->getFullList('company', 'team');
-        
-        $this->_checkResponse($response);
-    }
-
-    /**
-     * @test
-     */
     public function testGetSpecificList()
     {
         $router = new \oDesk\API\Routers\Activities\Team($this->_client);
@@ -88,28 +77,6 @@ class TeamTest extends CommonTestRouter
     {
         $router = new \oDesk\API\Routers\Activities\Team($this->_client);
         $response = $router->UnarchiveActivities('company', 'team', 'code');
-        
-        $this->_checkResponse($response);
-    }
-
-    /**
-     * @test
-     */
-    public function testDeleteActivities()
-    {
-        $router = new \oDesk\API\Routers\Activities\Team($this->_client);
-        $response = $router->deleteActivities('company', 'team', 'code');
-        
-        $this->_checkResponse($response);
-    }
-
-    /**
-     * @test
-     */
-    public function testDeleteAllActivities()
-    {
-        $router = new \oDesk\API\Routers\Activities\Team($this->_client);
-        $response = $router->deleteAllActivities('company', 'team');
         
         $this->_checkResponse($response);
     }

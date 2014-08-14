@@ -1,5 +1,13 @@
 # Release History
 
+## 0.1.13
+* Deprecated Get Full List in oTasks API
+* Deprecated Delete Codes in oTasks API
+* Deprecated company's level in oTasks API
+* Added new API - Get MC Thread by Context
+* Added new API - Get Last Posts by Context
+* Fixed Assign engagements to the list of activities
+
 ## 0.1.12
 * Added archive/unarchive oTasks API
 * Added Get Codes by Activity for oTasks
