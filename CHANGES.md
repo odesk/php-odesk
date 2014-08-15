@@ -1,5 +1,8 @@
 # Release History
 
+## 0.1.14
+* Fixed a typo in MC API for contexts
+
 ## 0.1.13
 * Deprecated Get Full List in oTasks API
 * Deprecated Delete Codes in oTasks API

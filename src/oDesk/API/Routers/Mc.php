@@ -103,7 +103,7 @@ final class Mc extends ApiClient
      * @access  public
      * @return  object
      */
-    public function getThreadByContext($username, $jobKey, $applicationId, $contexts = 'Interviews')
+    public function getThreadByContext($username, $jobKey, $applicationId, $context = 'Interviews')
     {
         ApiDebug::p(__FUNCTION__);
 
@@ -124,7 +124,7 @@ final class Mc extends ApiClient
      * @access  public
      * @return  object
      */
-    public function getThreadByContextLastPosts($username, $jobKey, $applicationId, $contexts = 'Interviews')
+    public function getThreadByContextLastPosts($username, $jobKey, $applicationId, $context = 'Interviews')
     {
         ApiDebug::p(__FUNCTION__);
 
