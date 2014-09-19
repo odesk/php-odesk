@@ -1,7 +1,7 @@
 {
     "name": "odesk/php-odesk",
     "description": "PHP bindings for oDesk API",
-    "version": "v0.1.14",
+    "version": "v0.1.15",
     "type": "library",
     "keywords": ["odesk", "php", "api"],
     "homepage": "http://www.odesk.com",

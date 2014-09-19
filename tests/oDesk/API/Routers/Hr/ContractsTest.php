@@ -18,6 +18,28 @@ class ContractsTest extends CommonTestRouter
     /**
      * @test
      */
+    public function testSuspendContract()
+    {
+        $router = new \oDesk\API\Routers\Hr\Contracts($this->_client);
+        $response = $router->suspendContract('11111', array());
+        
+        $this->_checkResponse($response);
+    }
+
+    /**
+     * @test
+     */
+    public function testRestartContract()
+    {
+        $router = new \oDesk\API\Routers\Hr\Contracts($this->_client);
+        $response = $router->restartContract('11111', array());
+        
+        $this->_checkResponse($response);
+    }
+
+    /**
+     * @test
+     */
     public function testEndContract()
     {
         $router = new \oDesk\API\Routers\Hr\Contracts($this->_client);

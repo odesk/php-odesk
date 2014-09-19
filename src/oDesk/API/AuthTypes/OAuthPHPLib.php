@@ -91,7 +91,7 @@ final class OAuthPHPLib extends AbstractOAuth implements ApiClient
         self::$_requestToken  = $requestTokenInfo['token'];
         self::$_requestSecret = $requestTokenInfo['token_secret'];
 
-        return $requestTokenInfo;
+        return array('oauth_token' => $requestTokenInfo['token'], 'oauth_token_secret' => $requestTokenInfo['token_secret']);
     }
 
     /**

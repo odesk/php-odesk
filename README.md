@@ -90,7 +90,7 @@ Add `odesk/php-odesk` to your `composer.json`, simple example:
 {
     "name": "my/my-oauth-app",
     "require": {
-        "odesk/php-odesk": "v0.1.10" // note: the latest release is recommended
+        "odesk/php-odesk": "v0.1.15" // note: the latest release is recommended
     }
 }
 ```
@@ -102,7 +102,7 @@ the output should look similar to
 ```
 Loading composer repositories with package information
 Updating dependencies (including require-dev)
-  - Installing odesk/php-odesk (v0.1.10)
+  - Installing odesk/php-odesk (v0.1.15)
     Downloading: 100%         
 
 Writing lock file
@@ -140,19 +140,19 @@ open `myapp.php` and type the consumerKey and consumerSecret that you previously
 ## Installation by downloading sources
 1.
 Download latest release from https://github.com/odesk/php-odesk/releases, 
-let's say it is https://github.com/odesk/php-odesk/archive/v0.1.10.tar.gz, and
+let's say it is https://github.com/odesk/php-odesk/archive/v0.1.15.tar.gz, and
 extract it to `vendor/odesk` folder, located in the root of your application.
 
 2.
 Create vendor/autoload.php, a possible simple variant could be:
 ```
-require_once __DIR__ . '/odesk/php-odesk-0.1.10/src/oDesk/API/constants.php';
+require_once __DIR__ . '/odesk/php-odesk-0.1.15/src/oDesk/API/constants.php';
 
 spl_autoload_register('oDeskVendorAutoloader');
 
 function oDeskVendorAutoloader($_class)
 {
-    $path = __DIR__ . '/odesk/php-odesk-0.1.10/src/' . str_replace('\\', '/', $_class) . '.php';
+    $path = __DIR__ . '/odesk/php-odesk-0.1.15/src/' . str_replace('\\', '/', $_class) . '.php';
     include_once $path;
 }
 ```

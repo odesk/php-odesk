@@ -1,5 +1,13 @@
 # Release History
 
+## 0.1.15
+* Added new API - Suspend Contract
+* Added new API - Resume Contract
+* Un/archive Activities start supporting a list of codes
+* Update OAuthPHPLib auth layer to support its usage in web example
+without need to modify example dirrectly, i.e. unify response
+of $client->getRequestToken()
+
 ## 0.1.14
 * Fixed a typo in MC API for contexts
 
