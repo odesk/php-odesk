@@ -43,6 +43,40 @@ final class Contracts extends ApiClient
     }
 
     /**
+     * Suspend Contract
+     *
+     * @param   integer $reference Contract reference
+     * @param   array $params Parameters
+     * @return  object
+     */
+    public function suspendContract($reference, $params)
+    {
+        ApiDebug::p(__FUNCTION__);
+
+        $response = $this->_client->put('/hr/v2/contracts/' . $reference . '/suspend', $params);
+        ApiDebug::p('found response info', $response);
+
+        return $response;
+    }
+
+    /**
+     * Restart Contract
+     *
+     * @param   integer $reference Contract reference
+     * @param   array $params Parameters
+     * @return  object
+     */
+    public function restartContract($reference, $params)
+    {
+        ApiDebug::p(__FUNCTION__);
+
+        $response = $this->_client->put('/hr/v2/contracts/' . $reference . '/restart', $params);
+        ApiDebug::p('found response info', $response);
+
+        return $response;
+    }
+
+    /**
      * End Contract
      *
      * @param   integer $reference Contract reference
