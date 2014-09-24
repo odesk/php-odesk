@@ -201,7 +201,7 @@
 </span><span id="91" class="l"><a class="l" href="#91"> 91: </a>        self::<span class="php-var">$_requestToken</span>  = <span class="php-var">$requestTokenInfo</span>[<span class="php-quote">'token'</span>];
 </span><span id="92" class="l"><a class="l" href="#92"> 92: </a>        self::<span class="php-var">$_requestSecret</span> = <span class="php-var">$requestTokenInfo</span>[<span class="php-quote">'token_secret'</span>];
 </span><span id="93" class="l"><a class="l" href="#93"> 93: </a>
-</span><span id="94" class="l"><a class="l" href="#94"> 94: </a>        <span class="php-keyword1">return</span> <span class="php-var">$requestTokenInfo</span>;
+</span><span id="94" class="l"><a class="l" href="#94"> 94: </a>        <span class="php-keyword1">return</span> <span class="php-keyword1">array</span>(<span class="php-quote">'oauth_token'</span> =&gt; <span class="php-var">$requestTokenInfo</span>[<span class="php-quote">'token'</span>], <span class="php-quote">'oauth_token_secret'</span> =&gt; <span class="php-var">$requestTokenInfo</span>[<span class="php-quote">'token_secret'</span>]);
 </span><span id="95" class="l"><a class="l" href="#95"> 95: </a>    }
 </span><span id="96" class="l"><a class="l" href="#96"> 96: </a>
 </span><span id="97" class="l"><a class="l" href="#97"> 97: </a>    <span class="php-comment">/**
