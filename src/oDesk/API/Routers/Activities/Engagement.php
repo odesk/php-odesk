@@ -45,10 +45,10 @@ final class Engagement extends ApiClient
     /**
      * List activities for specific engagement
      *
-     * @param   integer $engagement_ref Engagement reference
+     * @param   integer $engagementRef Engagement reference
      * @return  object
      */
-    public function getSpecific($engagement_ref)
+    public function getSpecific($engagementRef)
     {
         ApiDebug::p(__FUNCTION__);
 
@@ -61,15 +61,17 @@ final class Engagement extends ApiClient
     /**
      * Assign engagements to the list of activities
      *
-     * @param   string  $company 
+     * @param   string  $company Company ID
+     * @param   string  $team Team ID
      * @param   integer $engagement Engagement
+     * @param   array   $params Parameters
      * @return  object
      */
     public function assign($company, $team, $engagement, $params)
     {
         ApiDebug::p(__FUNCTION__);
 
-        $response = $this->_client->put('/otask/v2/tasks/companies/' .$company . '/teams/' . $team . '/engagements/' . $engagement . '/tasks', $params);
+        $response = $this->_client->put('/otask/v1/tasks/companies/' .$company . '/teams/' . $team . '/engagements/' . $engagement . '/tasks', $params);
         ApiDebug::p('found response info', $response);
 
         return $response;
