@@ -47,7 +47,7 @@ limitations under the License.
 ## SLA
 The usage of this API is ruled by the Terms of Use at:
 
-    http://developers.odesk.com/API-Terms-of-Use
+    https://developers.odesk.com/api-tos.html
 
 # Application Integration
 To integrate this library you need to have:

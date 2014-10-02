@@ -8,7 +8,7 @@
  * @since       05/20/2014
  * @copyright   Copyright 2014(c) oDesk.com
  * @author      Maksym Novozhylov <mnovozhilov@odesk.com>
- * @license     oDesk's API Terms of Use {@link http://developers.odesk.com/API-Terms-of-Use}
+ * @license     oDesk's API Terms of Use {@link https://developers.odesk.com/api-tos.html}
  */
 
 // Our php-oauth library - used in this example - requires a session
