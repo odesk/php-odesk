@@ -117,7 +117,7 @@
 </span></span><span id="8" class="l"><a class="l" href="#8"> 8: </a><span class="php-comment"> * @since       08/04/2014
 </span></span><span id="9" class="l"><a class="l" href="#9"> 9: </a><span class="php-comment"> * @copyright   Copyright 2014(c) oDesk.com
 </span></span><span id="10" class="l"><a class="l" href="#10">10: </a><span class="php-comment"> * @author      Maksym Novozhylov &lt;mnovozhilov@odesk.com&gt;
-</span></span><span id="11" class="l"><a class="l" href="#11">11: </a><span class="php-comment"> * @license     oDesk's API Terms of Use {@link http://developers.odesk.com/API-Terms-of-Use}
+</span></span><span id="11" class="l"><a class="l" href="#11">11: </a><span class="php-comment"> * @license     oDesk's API Terms of Use {@link https://developers.odesk.com/api-tos.html}
 </span></span><span id="12" class="l"><a class="l" href="#12">12: </a><span class="php-comment"> */</span>
 </span><span id="13" class="l"><a class="l" href="#13">13: </a>
 </span><span id="14" class="l"><a class="l" href="#14">14: </a><span class="php-keyword1">namespace</span> oDesk\API\Routers\Activities;
@@ -154,10 +154,10 @@
 </span><span id="45" class="l"><a class="l" href="#45">45: </a>    <span class="php-comment">/**
 </span></span><span id="46" class="l"><a class="l" href="#46">46: </a><span class="php-comment">     * List activities for specific engagement
 </span></span><span id="47" class="l"><a class="l" href="#47">47: </a><span class="php-comment">     *
-</span></span><span id="48" class="l"><a class="l" href="#48">48: </a><span class="php-comment">     * @param   integer $engagement_ref Engagement reference
+</span></span><span id="48" class="l"><a class="l" href="#48">48: </a><span class="php-comment">     * @param   integer $engagementRef Engagement reference
 </span></span><span id="49" class="l"><a class="l" href="#49">49: </a><span class="php-comment">     * @return  object
 </span></span><span id="50" class="l"><a class="l" href="#50">50: </a><span class="php-comment">     */</span>
-</span><span id="51" class="l"><a class="l" href="#51">51: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_getSpecific" href="#_getSpecific">getSpecific</a>(<span class="php-var">$engagement_ref</span>)
+</span><span id="51" class="l"><a class="l" href="#51">51: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_getSpecific" href="#_getSpecific">getSpecific</a>(<span class="php-var">$engagementRef</span>)
 </span><span id="52" class="l"><a class="l" href="#52">52: </a>    {
 </span><span id="53" class="l"><a class="l" href="#53">53: </a>        ApiDebug::p(__FUNCTION__);
 </span><span id="54" class="l"><a class="l" href="#54">54: </a>
@@ -170,21 +170,23 @@
 </span><span id="61" class="l"><a class="l" href="#61">61: </a>    <span class="php-comment">/**
 </span></span><span id="62" class="l"><a class="l" href="#62">62: </a><span class="php-comment">     * Assign engagements to the list of activities
 </span></span><span id="63" class="l"><a class="l" href="#63">63: </a><span class="php-comment">     *
-</span></span><span id="64" class="l"><a class="l" href="#64">64: </a><span class="php-comment">     * @param   string  $company 
-</span></span><span id="65" class="l"><a class="l" href="#65">65: </a><span class="php-comment">     * @param   integer $engagement Engagement
-</span></span><span id="66" class="l"><a class="l" href="#66">66: </a><span class="php-comment">     * @return  object
-</span></span><span id="67" class="l"><a class="l" href="#67">67: </a><span class="php-comment">     */</span>
-</span><span id="68" class="l"><a class="l" href="#68">68: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_assign" href="#_assign">assign</a>(<span class="php-var">$company</span>, <span class="php-var">$team</span>, <span class="php-var">$engagement</span>, <span class="php-var">$params</span>)
-</span><span id="69" class="l"><a class="l" href="#69">69: </a>    {
-</span><span id="70" class="l"><a class="l" href="#70">70: </a>        ApiDebug::p(__FUNCTION__);
-</span><span id="71" class="l"><a class="l" href="#71">71: </a>
-</span><span id="72" class="l"><a class="l" href="#72">72: </a>        <span class="php-var">$response</span> = <span class="php-var">$this</span>-&gt;_client-&gt;put(<span class="php-quote">'/otask/v2/tasks/companies/'</span> .<span class="php-var">$company</span> . <span class="php-quote">'/teams/'</span> . <span class="php-var">$team</span> . <span class="php-quote">'/engagements/'</span> . <span class="php-var">$engagement</span> . <span class="php-quote">'/tasks'</span>, <span class="php-var">$params</span>);
-</span><span id="73" class="l"><a class="l" href="#73">73: </a>        ApiDebug::p(<span class="php-quote">'found response info'</span>, <span class="php-var">$response</span>);
-</span><span id="74" class="l"><a class="l" href="#74">74: </a>
-</span><span id="75" class="l"><a class="l" href="#75">75: </a>        <span class="php-keyword1">return</span> <span class="php-var">$response</span>;
-</span><span id="76" class="l"><a class="l" href="#76">76: </a>    }
-</span><span id="77" class="l"><a class="l" href="#77">77: </a>}
-</span><span id="78" class="l"><a class="l" href="#78">78: </a></span></code></pre>
+</span></span><span id="64" class="l"><a class="l" href="#64">64: </a><span class="php-comment">     * @param   string  $company Company ID
+</span></span><span id="65" class="l"><a class="l" href="#65">65: </a><span class="php-comment">     * @param   string  $team Team ID
+</span></span><span id="66" class="l"><a class="l" href="#66">66: </a><span class="php-comment">     * @param   integer $engagement Engagement
+</span></span><span id="67" class="l"><a class="l" href="#67">67: </a><span class="php-comment">     * @param   array   $params Parameters
+</span></span><span id="68" class="l"><a class="l" href="#68">68: </a><span class="php-comment">     * @return  object
+</span></span><span id="69" class="l"><a class="l" href="#69">69: </a><span class="php-comment">     */</span>
+</span><span id="70" class="l"><a class="l" href="#70">70: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_assign" href="#_assign">assign</a>(<span class="php-var">$company</span>, <span class="php-var">$team</span>, <span class="php-var">$engagement</span>, <span class="php-var">$params</span>)
+</span><span id="71" class="l"><a class="l" href="#71">71: </a>    {
+</span><span id="72" class="l"><a class="l" href="#72">72: </a>        ApiDebug::p(__FUNCTION__);
+</span><span id="73" class="l"><a class="l" href="#73">73: </a>
+</span><span id="74" class="l"><a class="l" href="#74">74: </a>        <span class="php-var">$response</span> = <span class="php-var">$this</span>-&gt;_client-&gt;put(<span class="php-quote">'/otask/v1/tasks/companies/'</span> .<span class="php-var">$company</span> . <span class="php-quote">'/teams/'</span> . <span class="php-var">$team</span> . <span class="php-quote">'/engagements/'</span> . <span class="php-var">$engagement</span> . <span class="php-quote">'/tasks'</span>, <span class="php-var">$params</span>);
+</span><span id="75" class="l"><a class="l" href="#75">75: </a>        ApiDebug::p(<span class="php-quote">'found response info'</span>, <span class="php-var">$response</span>);
+</span><span id="76" class="l"><a class="l" href="#76">76: </a>
+</span><span id="77" class="l"><a class="l" href="#77">77: </a>        <span class="php-keyword1">return</span> <span class="php-var">$response</span>;
+</span><span id="78" class="l"><a class="l" href="#78">78: </a>    }
+</span><span id="79" class="l"><a class="l" href="#79">79: </a>}
+</span><span id="80" class="l"><a class="l" href="#80">80: </a></span></code></pre>
 
 	<div id="footer">
 		 API documentation generated by <a href="http://apigen.org">ApiGen 2.8.0</a>
