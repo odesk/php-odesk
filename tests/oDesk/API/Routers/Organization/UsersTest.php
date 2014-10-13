@@ -25,4 +25,15 @@ class UsersTest extends CommonTestRouter
         
         $this->_checkResponse($response);
     }
+
+    /**
+     * @test
+     */
+    public function testSpecific()
+    {
+        $router = new \oDesk\API\Routers\Organization\Users($this->_client);
+        $response = $router->getSpecific('1234');
+        
+        $this->_checkResponse($response);
+    }
 }
