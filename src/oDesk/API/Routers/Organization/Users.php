@@ -56,4 +56,20 @@ final class Users extends ApiClient
 
         return $response;
     }
+
+    /**
+     * Get Specific User Info
+     *
+     * @param integer $userReference User Reference
+     * @return object
+     */
+    public function getSpecific($userReference)
+    {
+        ApiDebug::p(__FUNCTION__);
+
+        $response = $this->_client->get('/hr/v2/users/' . $userReference);
+        ApiDebug::p('found response info', $response);
+
+        return $response;
+    }
 }

@@ -1,5 +1,8 @@
 # Release History
 
+## 0.1.16
+* Added new call for Referenced User API
+
 ## 0.1.15
 * Added new API - Suspend Contract
 * Added new API - Resume Contract
