@@ -1,5 +1,8 @@
 # Release History
 
+## 0.1.17
+* a release for packagist (composer)
+
 ## 0.1.16
 * Added new call for Referenced User API
 
