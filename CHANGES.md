@@ -1,6 +1,8 @@
 # Release History
 
 ## 0.1.18
+* Added new Milestone API - Get Active Milestone for specific Contract
+* Added new Milestone API - Get all Submissions for specific Milestone
 * Added new Milestone API - Create a new Milestone
 * Added new Milestone API - Edit the Milestone
 * Added new Milestone API - Approve the Milestone

@@ -18,6 +18,28 @@ class MilestonesTest extends CommonTestRouter
     /**
      * @test
      */
+    public function testGetActiveMilestone()
+    {
+        $router = new \oDesk\API\Routers\Hr\Milestones($this->_client);
+        $response = $router->getActiveMilestone(1234);
+        
+        $this->_checkResponse($response);
+    }
+
+    /**
+     * @test
+     */
+    public function testGetSubmissions()
+    {
+        $router = new \oDesk\API\Routers\Hr\Milestones($this->_client);
+        $response = $router->getSubmissions(1234);
+        
+        $this->_checkResponse($response);
+    }
+
+    /**
+     * @test
+     */
     public function testCreate()
     {
         $router = new \oDesk\API\Routers\Hr\Milestones($this->_client);

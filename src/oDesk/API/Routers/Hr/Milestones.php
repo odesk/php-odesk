@@ -43,6 +43,38 @@ final class Milestones extends ApiClient
     }
 
     /**
+     * Get active Milestone for specific Contract
+     *
+     * @param   integer $contractId Contract reference
+     * @return  object
+     */
+    public function getActiveMilestone($contractId)
+    {
+        ApiDebug::p(__FUNCTION__);
+
+        $response = $this->_client->get('/hr/v3/fp/milestones/statuses/active/contracts/' . $contractId);
+        ApiDebug::p('found response info', $response);
+
+        return $response;
+    }
+
+    /**
+     * Get all Submissions for specific Milestone
+     *
+     * @param   integer $milestoneId Milestone ID
+     * @return  object
+     */
+    public function getSubmissions($milestoneId)
+    {
+        ApiDebug::p(__FUNCTION__);
+
+        $response = $this->_client->get('/hr/v3/fp/milestones/' . $milestoneId . '/submissions');
+        ApiDebug::p('found response info', $response);
+
+        return $response;
+    }
+
+    /**
      * Create a new Milestone
      *
      * @param   array $params Parameters
@@ -61,7 +93,7 @@ final class Milestones extends ApiClient
     /**
      * Edit an existing Milestone
      *
-     * @param   integer Milestone ID
+     * @param   integer $milestoneId Milestone ID
      * @param   array $params Parameters
      * @return  object
      */
@@ -78,7 +110,7 @@ final class Milestones extends ApiClient
     /**
      * Activate an existing Milestone
      *
-     * @param   integer Milestone ID
+     * @param   integer $milestoneId Milestone ID
      * @param   array $params Parameters
      * @return  object
      */
@@ -95,7 +127,7 @@ final class Milestones extends ApiClient
     /**
      * Approve an existing Milestone
      *
-     * @param   integer Milestone ID
+     * @param   integer $milestoneId Milestone ID
      * @param   array $params Parameters
      * @return  object
      */
@@ -112,7 +144,7 @@ final class Milestones extends ApiClient
     /**
      * Delete an existing Milestone
      *
-     * @param   integer Milestone ID
+     * @param   integer $milestoneId Milestone ID
      * @return  object
      */
     public function delete($milestoneId)
