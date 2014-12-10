@@ -5,7 +5,7 @@
 	<meta name="generator" content="ApiGen 2.8.0">
 	<meta name="robots" content="noindex">
 
-	<title>File oDesk/API/Routers/Hr/Contracts.php</title>
+	<title>File oDesk/API/Routers/Hr/Submissions.php</title>
 
 	<script type="text/javascript" src="resources/combined.js?3770084987"></script>
 	<script type="text/javascript" src="elementlist.js?3374545921"></script>
@@ -63,13 +63,13 @@
 		<div id="elements">
 			<h3>Classes</h3>
 			<ul>
-				<li class="active"><a href="class-oDesk.API.Routers.Hr.Contracts.html">Contracts</a></li>
+				<li><a href="class-oDesk.API.Routers.Hr.Contracts.html">Contracts</a></li>
 				<li><a href="class-oDesk.API.Routers.Hr.Engagements.html">Engagements</a></li>
 				<li><a href="class-oDesk.API.Routers.Hr.Interviews.html">Interviews</a></li>
 				<li><a href="class-oDesk.API.Routers.Hr.Jobs.html">Jobs</a></li>
 				<li><a href="class-oDesk.API.Routers.Hr.Milestones.html">Milestones</a></li>
 				<li><a href="class-oDesk.API.Routers.Hr.Roles.html">Roles</a></li>
-				<li><a href="class-oDesk.API.Routers.Hr.Submissions.html">Submissions</a></li>
+				<li class="active"><a href="class-oDesk.API.Routers.Hr.Submissions.html">Submissions</a></li>
 			</ul>
 
 
@@ -100,7 +100,7 @@
 				<a href="namespace-oDesk.API.Routers.Hr.html" title="Summary of oDesk\API\Routers\Hr"><span>Namespace</span></a>
 			</li>
 			<li>
-				<a href="class-oDesk.API.Routers.Hr.Contracts.html" title="Summary of oDesk\API\Routers\Hr\Contracts"><span>Class</span></a>
+				<a href="class-oDesk.API.Routers.Hr.Submissions.html" title="Summary of oDesk\API\Routers\Hr\Submissions"><span>Class</span></a>
 			</li>
 		</ul>
 		<ul>
@@ -115,11 +115,11 @@
 <pre><code><span id="1" class="l"><a class="l" href="#1"> 1: </a><span class="xlang">&lt;?php</span>
 </span><span id="2" class="l"><a class="l" href="#2"> 2: </a><span class="php-comment">/**
 </span></span><span id="3" class="l"><a class="l" href="#3"> 3: </a><span class="php-comment"> * oDesk auth library for using with public API by OAuth
-</span></span><span id="4" class="l"><a class="l" href="#4"> 4: </a><span class="php-comment"> * Contracts
+</span></span><span id="4" class="l"><a class="l" href="#4"> 4: </a><span class="php-comment"> * Work with Submissions
 </span></span><span id="5" class="l"><a class="l" href="#5"> 5: </a><span class="php-comment"> *
 </span></span><span id="6" class="l"><a class="l" href="#6"> 6: </a><span class="php-comment"> * @final
 </span></span><span id="7" class="l"><a class="l" href="#7"> 7: </a><span class="php-comment"> * @package     oDeskAPI
-</span></span><span id="8" class="l"><a class="l" href="#8"> 8: </a><span class="php-comment"> * @since       05/09/2014
+</span></span><span id="8" class="l"><a class="l" href="#8"> 8: </a><span class="php-comment"> * @since       11/17/2014
 </span></span><span id="9" class="l"><a class="l" href="#9"> 9: </a><span class="php-comment"> * @copyright   Copyright 2014(c) oDesk.com
 </span></span><span id="10" class="l"><a class="l" href="#10">10: </a><span class="php-comment"> * @author      Maksym Novozhylov &lt;mnovozhilov@odesk.com&gt;
 </span></span><span id="11" class="l"><a class="l" href="#11">11: </a><span class="php-comment"> * @license     oDesk's API Terms of Use {@link https://developers.odesk.com/api-tos.html}
@@ -131,11 +131,11 @@
 </span><span id="17" class="l"><a class="l" href="#17">17: </a><span class="php-keyword1">use</span> oDesk\API\Client <span class="php-keyword1">as</span> ApiClient;
 </span><span id="18" class="l"><a class="l" href="#18">18: </a>
 </span><span id="19" class="l"><a class="l" href="#19">19: </a><span class="php-comment">/**
-</span></span><span id="20" class="l"><a class="l" href="#20">20: </a><span class="php-comment"> * Contracts API
+</span></span><span id="20" class="l"><a class="l" href="#20">20: </a><span class="php-comment"> * Submissions
 </span></span><span id="21" class="l"><a class="l" href="#21">21: </a><span class="php-comment"> *
-</span></span><span id="22" class="l"><a class="l" href="#22">22: </a><span class="php-comment"> * @link http://developers.odesk.com/w/page/46842954/Contracts%20API
+</span></span><span id="22" class="l"><a class="l" href="#22">22: </a><span class="php-comment"> * @link https://developers.odesk.com/?lang=php#contracts-and-offers
 </span></span><span id="23" class="l"><a class="l" href="#23">23: </a><span class="php-comment"> */</span>
-</span><span id="24" class="l"><a class="l" href="#24">24: </a><span class="php-keyword1">final</span> <span class="php-keyword1">class</span> <a id="Contracts" href="#Contracts">Contracts</a> <span class="php-keyword1">extends</span> ApiClient
+</span><span id="24" class="l"><a class="l" href="#24">24: </a><span class="php-keyword1">final</span> <span class="php-keyword1">class</span> <a id="Submissions" href="#Submissions">Submissions</a> <span class="php-keyword1">extends</span> ApiClient
 </span><span id="25" class="l"><a class="l" href="#25">25: </a>{
 </span><span id="26" class="l"><a class="l" href="#26">26: </a>    <span class="php-keyword1">const</span> <a id="ENTRY_POINT" href="#ENTRY_POINT">ENTRY_POINT</a> = ODESK_API_EP_NAME;
 </span><span id="27" class="l"><a class="l" href="#27">27: </a>
@@ -157,57 +157,56 @@
 </span><span id="43" class="l"><a class="l" href="#43">43: </a>    }
 </span><span id="44" class="l"><a class="l" href="#44">44: </a>
 </span><span id="45" class="l"><a class="l" href="#45">45: </a>    <span class="php-comment">/**
-</span></span><span id="46" class="l"><a class="l" href="#46">46: </a><span class="php-comment">     * Suspend Contract
+</span></span><span id="46" class="l"><a class="l" href="#46">46: </a><span class="php-comment">     * Freelancer submits work for the client to approve
 </span></span><span id="47" class="l"><a class="l" href="#47">47: </a><span class="php-comment">     *
-</span></span><span id="48" class="l"><a class="l" href="#48">48: </a><span class="php-comment">     * @param   integer $reference Contract reference
-</span></span><span id="49" class="l"><a class="l" href="#49">49: </a><span class="php-comment">     * @param   array $params Parameters
-</span></span><span id="50" class="l"><a class="l" href="#50">50: </a><span class="php-comment">     * @return  object
-</span></span><span id="51" class="l"><a class="l" href="#51">51: </a><span class="php-comment">     */</span>
-</span><span id="52" class="l"><a class="l" href="#52">52: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_suspendContract" href="#_suspendContract">suspendContract</a>(<span class="php-var">$reference</span>, <span class="php-var">$params</span>)
-</span><span id="53" class="l"><a class="l" href="#53">53: </a>    {
-</span><span id="54" class="l"><a class="l" href="#54">54: </a>        ApiDebug::p(__FUNCTION__);
-</span><span id="55" class="l"><a class="l" href="#55">55: </a>
-</span><span id="56" class="l"><a class="l" href="#56">56: </a>        <span class="php-var">$response</span> = <span class="php-var">$this</span>-&gt;_client-&gt;put(<span class="php-quote">'/hr/v2/contracts/'</span> . <span class="php-var">$reference</span> . <span class="php-quote">'/suspend'</span>, <span class="php-var">$params</span>);
-</span><span id="57" class="l"><a class="l" href="#57">57: </a>        ApiDebug::p(<span class="php-quote">'found response info'</span>, <span class="php-var">$response</span>);
-</span><span id="58" class="l"><a class="l" href="#58">58: </a>
-</span><span id="59" class="l"><a class="l" href="#59">59: </a>        <span class="php-keyword1">return</span> <span class="php-var">$response</span>;
-</span><span id="60" class="l"><a class="l" href="#60">60: </a>    }
-</span><span id="61" class="l"><a class="l" href="#61">61: </a>
-</span><span id="62" class="l"><a class="l" href="#62">62: </a>    <span class="php-comment">/**
-</span></span><span id="63" class="l"><a class="l" href="#63">63: </a><span class="php-comment">     * Restart Contract
-</span></span><span id="64" class="l"><a class="l" href="#64">64: </a><span class="php-comment">     *
-</span></span><span id="65" class="l"><a class="l" href="#65">65: </a><span class="php-comment">     * @param   integer $reference Contract reference
-</span></span><span id="66" class="l"><a class="l" href="#66">66: </a><span class="php-comment">     * @param   array $params Parameters
-</span></span><span id="67" class="l"><a class="l" href="#67">67: </a><span class="php-comment">     * @return  object
-</span></span><span id="68" class="l"><a class="l" href="#68">68: </a><span class="php-comment">     */</span>
-</span><span id="69" class="l"><a class="l" href="#69">69: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_restartContract" href="#_restartContract">restartContract</a>(<span class="php-var">$reference</span>, <span class="php-var">$params</span>)
-</span><span id="70" class="l"><a class="l" href="#70">70: </a>    {
-</span><span id="71" class="l"><a class="l" href="#71">71: </a>        ApiDebug::p(__FUNCTION__);
-</span><span id="72" class="l"><a class="l" href="#72">72: </a>
-</span><span id="73" class="l"><a class="l" href="#73">73: </a>        <span class="php-var">$response</span> = <span class="php-var">$this</span>-&gt;_client-&gt;put(<span class="php-quote">'/hr/v2/contracts/'</span> . <span class="php-var">$reference</span> . <span class="php-quote">'/restart'</span>, <span class="php-var">$params</span>);
-</span><span id="74" class="l"><a class="l" href="#74">74: </a>        ApiDebug::p(<span class="php-quote">'found response info'</span>, <span class="php-var">$response</span>);
-</span><span id="75" class="l"><a class="l" href="#75">75: </a>
-</span><span id="76" class="l"><a class="l" href="#76">76: </a>        <span class="php-keyword1">return</span> <span class="php-var">$response</span>;
-</span><span id="77" class="l"><a class="l" href="#77">77: </a>    }
-</span><span id="78" class="l"><a class="l" href="#78">78: </a>
-</span><span id="79" class="l"><a class="l" href="#79">79: </a>    <span class="php-comment">/**
-</span></span><span id="80" class="l"><a class="l" href="#80">80: </a><span class="php-comment">     * End Contract
-</span></span><span id="81" class="l"><a class="l" href="#81">81: </a><span class="php-comment">     *
-</span></span><span id="82" class="l"><a class="l" href="#82">82: </a><span class="php-comment">     * @param   integer $reference Contract reference
-</span></span><span id="83" class="l"><a class="l" href="#83">83: </a><span class="php-comment">     * @param   array $params Parameters
-</span></span><span id="84" class="l"><a class="l" href="#84">84: </a><span class="php-comment">     * @return  object
-</span></span><span id="85" class="l"><a class="l" href="#85">85: </a><span class="php-comment">     */</span>
-</span><span id="86" class="l"><a class="l" href="#86">86: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_endContract" href="#_endContract">endContract</a>(<span class="php-var">$reference</span>, <span class="php-var">$params</span>)
-</span><span id="87" class="l"><a class="l" href="#87">87: </a>    {
-</span><span id="88" class="l"><a class="l" href="#88">88: </a>        ApiDebug::p(__FUNCTION__);
-</span><span id="89" class="l"><a class="l" href="#89">89: </a>
-</span><span id="90" class="l"><a class="l" href="#90">90: </a>        <span class="php-var">$response</span> = <span class="php-var">$this</span>-&gt;_client-&gt;<span class="php-keyword2">delete</span>(<span class="php-quote">'/hr/v2/contracts/'</span> . <span class="php-var">$reference</span>, <span class="php-var">$params</span>);
-</span><span id="91" class="l"><a class="l" href="#91">91: </a>        ApiDebug::p(<span class="php-quote">'found response info'</span>, <span class="php-var">$response</span>);
-</span><span id="92" class="l"><a class="l" href="#92">92: </a>
-</span><span id="93" class="l"><a class="l" href="#93">93: </a>        <span class="php-keyword1">return</span> <span class="php-var">$response</span>;
-</span><span id="94" class="l"><a class="l" href="#94">94: </a>    }
-</span><span id="95" class="l"><a class="l" href="#95">95: </a>}
-</span><span id="96" class="l"><a class="l" href="#96">96: </a></span></code></pre>
+</span></span><span id="48" class="l"><a class="l" href="#48">48: </a><span class="php-comment">     * @param   array $params Parameters
+</span></span><span id="49" class="l"><a class="l" href="#49">49: </a><span class="php-comment">     * @return  object
+</span></span><span id="50" class="l"><a class="l" href="#50">50: </a><span class="php-comment">     */</span>
+</span><span id="51" class="l"><a class="l" href="#51">51: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_requestApproval" href="#_requestApproval">requestApproval</a>(<span class="php-var">$params</span>)
+</span><span id="52" class="l"><a class="l" href="#52">52: </a>    {
+</span><span id="53" class="l"><a class="l" href="#53">53: </a>        ApiDebug::p(__FUNCTION__);
+</span><span id="54" class="l"><a class="l" href="#54">54: </a>
+</span><span id="55" class="l"><a class="l" href="#55">55: </a>        <span class="php-var">$response</span> = <span class="php-var">$this</span>-&gt;_client-&gt;post(<span class="php-quote">'/hr/v3/fp/submissions'</span>, <span class="php-var">$params</span>);
+</span><span id="56" class="l"><a class="l" href="#56">56: </a>        ApiDebug::p(<span class="php-quote">'found response info'</span>, <span class="php-var">$response</span>);
+</span><span id="57" class="l"><a class="l" href="#57">57: </a>
+</span><span id="58" class="l"><a class="l" href="#58">58: </a>        <span class="php-keyword1">return</span> <span class="php-var">$response</span>;
+</span><span id="59" class="l"><a class="l" href="#59">59: </a>    }
+</span><span id="60" class="l"><a class="l" href="#60">60: </a>
+</span><span id="61" class="l"><a class="l" href="#61">61: </a>    <span class="php-comment">/**
+</span></span><span id="62" class="l"><a class="l" href="#62">62: </a><span class="php-comment">     * Approve an existing Submission
+</span></span><span id="63" class="l"><a class="l" href="#63">63: </a><span class="php-comment">     *
+</span></span><span id="64" class="l"><a class="l" href="#64">64: </a><span class="php-comment">     * @param   integer Submission ID
+</span></span><span id="65" class="l"><a class="l" href="#65">65: </a><span class="php-comment">     * @param   array $params Parameters
+</span></span><span id="66" class="l"><a class="l" href="#66">66: </a><span class="php-comment">     * @return  object
+</span></span><span id="67" class="l"><a class="l" href="#67">67: </a><span class="php-comment">     */</span>
+</span><span id="68" class="l"><a class="l" href="#68">68: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_approve" href="#_approve">approve</a>(<span class="php-var">$submissionId</span>, <span class="php-var">$params</span>)
+</span><span id="69" class="l"><a class="l" href="#69">69: </a>    {
+</span><span id="70" class="l"><a class="l" href="#70">70: </a>        ApiDebug::p(__FUNCTION__);
+</span><span id="71" class="l"><a class="l" href="#71">71: </a>
+</span><span id="72" class="l"><a class="l" href="#72">72: </a>        <span class="php-var">$response</span> = <span class="php-var">$this</span>-&gt;_client-&gt;put(<span class="php-quote">'/hr/v3/fp/submissions/'</span> . <span class="php-var">$submissionId</span> . <span class="php-quote">'/approve'</span>, <span class="php-var">$params</span>);
+</span><span id="73" class="l"><a class="l" href="#73">73: </a>        ApiDebug::p(<span class="php-quote">'found response info'</span>, <span class="php-var">$response</span>);
+</span><span id="74" class="l"><a class="l" href="#74">74: </a>
+</span><span id="75" class="l"><a class="l" href="#75">75: </a>        <span class="php-keyword1">return</span> <span class="php-var">$response</span>;
+</span><span id="76" class="l"><a class="l" href="#76">76: </a>    }
+</span><span id="77" class="l"><a class="l" href="#77">77: </a>
+</span><span id="78" class="l"><a class="l" href="#78">78: </a>    <span class="php-comment">/**
+</span></span><span id="79" class="l"><a class="l" href="#79">79: </a><span class="php-comment">     * Reject an existing Submission
+</span></span><span id="80" class="l"><a class="l" href="#80">80: </a><span class="php-comment">     *
+</span></span><span id="81" class="l"><a class="l" href="#81">81: </a><span class="php-comment">     * @param   integer Submission ID
+</span></span><span id="82" class="l"><a class="l" href="#82">82: </a><span class="php-comment">     * @param   array $params Parameters
+</span></span><span id="83" class="l"><a class="l" href="#83">83: </a><span class="php-comment">     * @return  object
+</span></span><span id="84" class="l"><a class="l" href="#84">84: </a><span class="php-comment">     */</span>
+</span><span id="85" class="l"><a class="l" href="#85">85: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_reject" href="#_reject">reject</a>(<span class="php-var">$submissionId</span>, <span class="php-var">$params</span>)
+</span><span id="86" class="l"><a class="l" href="#86">86: </a>    {
+</span><span id="87" class="l"><a class="l" href="#87">87: </a>        ApiDebug::p(__FUNCTION__);
+</span><span id="88" class="l"><a class="l" href="#88">88: </a>
+</span><span id="89" class="l"><a class="l" href="#89">89: </a>        <span class="php-var">$response</span> = <span class="php-var">$this</span>-&gt;_client-&gt;<span class="php-keyword2">delete</span>(<span class="php-quote">'/hr/v3/fp/submissions/'</span> . <span class="php-var">$submissionId</span> . <span class="php-quote">'/reject'</span>, <span class="php-var">$params</span>);
+</span><span id="90" class="l"><a class="l" href="#90">90: </a>        ApiDebug::p(<span class="php-quote">'found response info'</span>, <span class="php-var">$response</span>);
+</span><span id="91" class="l"><a class="l" href="#91">91: </a>
+</span><span id="92" class="l"><a class="l" href="#92">92: </a>        <span class="php-keyword1">return</span> <span class="php-var">$response</span>;
+</span><span id="93" class="l"><a class="l" href="#93">93: </a>    }
+</span><span id="94" class="l"><a class="l" href="#94">94: </a>}
+</span><span id="95" class="l"><a class="l" href="#95">95: </a></span></code></pre>
 
 	<div id="footer">
 		 API documentation generated by <a href="http://apigen.org">ApiGen 2.8.0</a>
