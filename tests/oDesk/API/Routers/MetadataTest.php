@@ -27,6 +27,17 @@ class MetadataTest extends CommonTestRouter
     /**
      * @test
      */
+    public function testGetCategoriesV2()
+    {
+        $router = new \oDesk\API\Routers\Metadata($this->_client);
+        $response = $router->getCategoriesV2();
+        
+        $this->_checkResponse($response);
+    }
+
+    /**
+     * @test
+     */
     public function testGetSkills()
     {
         $router = new \oDesk\API\Routers\Metadata($this->_client);
