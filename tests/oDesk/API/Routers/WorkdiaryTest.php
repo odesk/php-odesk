@@ -23,4 +23,15 @@ class WorkdiaryTest extends CommonTestRouter
         
         $this->_checkResponse($response);
     }
+
+    /** 
+     * @test
+     */
+    public function testGetByContract()
+    {   
+        $router = new \oDesk\API\Routers\Workdiary($this->_client);
+        $response = $router->getByContract('1234', array());
+    
+        $this->_checkResponse($response);
+    }
 }

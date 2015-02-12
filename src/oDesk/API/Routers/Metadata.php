@@ -58,6 +58,21 @@ final class Metadata extends ApiClient
     }
 
     /**
+     * Get Categories (v2)
+     *
+     * @return object
+     */
+    public function getCategoriesV2()
+    {
+        ApiDebug::p(__FUNCTION__);
+
+        $response = $this->_client->get('/profiles/v2/metadata/categories');
+        ApiDebug::p('found response info', $response);
+
+        return $response;
+    }
+
+    /**
      * Get Skills
      *
      * @return object
