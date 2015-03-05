@@ -36,4 +36,15 @@ class OffersTest extends CommonTestRouter
         
         $this->_checkResponse($response);
     }
+
+    /**
+     * @test
+     */
+    public function testActions()
+    {
+        $router = new \oDesk\API\Routers\Hr\Freelancers\Offers($this->_client);
+        $response = $router->actions('12345', array());
+        
+        $this->_checkResponse($response);
+    }
 }

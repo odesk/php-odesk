@@ -1,11 +1,11 @@
 {
     "name": "odesk/php-odesk",
     "description": "PHP bindings for oDesk API",
-    "version": "v0.1.19",
+    "version": "v0.1.20",
     "type": "library",
     "keywords": ["odesk", "php", "api"],
     "homepage": "http://www.odesk.com",
-    "time": "2014-11-21",
+    "time": "2015-03-05",
     "license": "Apache-2.0",
     "authors": [
         {

@@ -73,4 +73,21 @@ final class Offers extends ApiClient
 
         return $response;
     }
+
+    /**
+     * Run a specific action
+     *
+     * @param   integer $reference  Offer reference
+     * @param   array   $params     Prameters
+     * @return  object
+     */
+    public function actions($reference, $params)
+    {
+        ApiDebug::p(__FUNCTION__);
+
+        $response = $this->_client->post('/offers/v1/contractors/actions/' . $reference, $params);
+        ApiDebug::p('found response info', $response);
+
+        return $response;
+    }
 }
