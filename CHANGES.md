@@ -1,5 +1,10 @@
 # Release History
 
+## 0.1.21
+* Added new Snapshot API - Get Snapshot by Contract
+* Added new Snapshot API - Update Snapshot memo by Contract
+* Added new Snapshot API - Delete Snapshot by Contract
+
 ## 0.1.20
 * Added new Offer API - Accept or decline an offer
 
