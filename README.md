@@ -1,3 +1,5 @@
+# **DEPRECATED (use https://github.com/upwork/php-upwork instead)**
+
 PHP bindings for oDesk API
 ============
 
